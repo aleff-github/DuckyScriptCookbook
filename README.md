@@ -18,22 +18,22 @@ DuckyScript Cookbook is a simple yet powerful VSCode extension that helps you sp
 
 Ever wanted more ducks in your life? Now you can have an adorable duck icon grace all your text files! Sure, some might not be payloads, but who cares? Ducks make everything better, right? 🦆✨
 
-![Duck in the text](./media/readme_stuff/DuckyInTheText.png)
+![Duck in the text](https://i.ibb.co/LdZRxmZ/Ducky-In-The-Text.png)
 
 ### 📖 Ready-to-Use Recipes (Sadly, Not Edible)
 Dive into our collection of pre-made DuckyScript "recipes" that are ready to be served hot into your projects. From simple tasks to complex operations, we've got a dish for every occasion. Bon appétit... err, we mean, happy coding! 🍽️
 
-![DuckyScript Cookbook](./media/readme_stuff/DuckyScript%20Cookbook.gif)
+![DuckyScript Cookbook](https://i.ibb.co/s28Fdjm/Ducky-Script-Cookbook.gif)
 
 ### 📝 Useful Snippets and Where to Find Them
 Channel your inner wizard and explore a library of handy snippets waiting to be discovered. No Marauder's Map needed—just a couple of clicks, and you're there! Accio, perfect script! 🧙‍♂️✨
 
-![Usefull Snippets](./media/readme_stuff/Usefull_Snippets.gif)
+![Usefull Snippets](https://i.ibb.co/1TSPbJx/Usefull-Snippets.gif)
 
 ### 😎 A Cool Style to Show Off to Your Desk Neighbors
 Tired of boring old scripts? Impress your colleagues with slick and stylish code that's as cool as the other side of the pillow. They'll be so jealous, they might just quack in envy! 🕶️🔥
 
-![DuckyScript Cookbook](./media/readme_stuff/Beautiful_Menu.gif)
+![DuckyScript Cookbook](https://i.ibb.co/5hsXpvR/Beautiful-Menu.gif)
 
 ---
 
