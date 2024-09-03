@@ -1,0 +1,10 @@
+
+REM_BLOCK
+    Credits:    ShellHacks
+    Website:    https://www.shellhacks.com
+    Source:     https://www.shellhacks.com/clear-history-powershell/
+END_REM
+
+REM Clear the command history in PowerShell by deleting the history file
+STRINGLN Remove-Item (Get-PSReadlineOption).HistorySavePath
+

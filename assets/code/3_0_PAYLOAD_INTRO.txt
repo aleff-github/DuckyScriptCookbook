@@ -1,0 +1,12 @@
+REM_BLOCK
+#############################
+#                           #
+# Title        : example    #
+# Author       : example    #
+# Version      : 1.0        #
+# Category     : example    #
+# Target       : OS example #
+#                           #
+#############################
+END_REM
+

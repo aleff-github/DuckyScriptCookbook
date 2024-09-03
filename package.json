@@ -1,0 +1,98 @@
+{
+	"name": "duckyscriptcookbook",
+	"displayName": "DuckyScript Cookbook",
+	"description": "DuckyScript Cookbook is a VSCode extension that simplifies writing DuckyScript code for USB Rubber Ducky devices.",
+	"version": "1.0.0",
+	"publisher": "duckyscriptcookbook",
+	"engines": {
+		"vscode": "^1.74.3"
+	},
+	"author": {
+		"name": "Aleff"
+	},
+	"categories": [
+		"Programming Languages",
+		"Snippets"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"languages": [
+			{
+				"id": "duckyscript",
+				"aliases": [
+					"DuckyScript",
+					"ds"
+				],
+				"extensions": [
+					".txt",
+					".ds",
+					".duckyscript"
+				],
+				"icon": {
+					"light": "./images/icon.png",
+					"dark": "./images/icon.png"
+				}
+			}
+		],
+		"commands": [
+			{
+				"command": "duckyscript.Cookbook",
+				"title": "DuckyScript Cookbook"
+			}
+		],
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "DuckyScriptCookbook",
+					"title": "DuckyScript Cookbook",
+					"icon": "media/icon/icon.svg"
+				}
+			]
+		},
+		"views": {
+			"DuckyScriptCookbook": [
+				{
+					"type": "webview",
+					"id": "duckyscript.Cookbook",
+					"name": "DuckyScript Cookbook"
+				}
+			]
+		},
+		"snippets": [
+			{
+				"language": "duckyscript",
+				"path": "./snippets/snippets.json"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"lint": "eslint src --ext ts",
+		"build": "tsc"
+	},
+	"devDependencies": {
+		"@types/node": "16.x",
+		"@types/vscode": "^1.69.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/aleff-github/DuckyScriptCookbook.git"
+	},
+	"homepage": "https://github.com/aleff-github/DuckyScriptCookbook",
+	"icon": "images/icon.png",
+	"dependencies": {
+		"@types/vscode": "^1.69.0",
+		"sys": "^0.0.1",
+		"util": "^0.12.5",
+		"vscode": "^1.1.34",
+		"vscode-test": "^1.6.1"
+	},
+	"__metadata": {
+		"id": "849ae603-6959-49c0-ae4c-a7c187456436",
+		"publisherDisplayName": "duckyscriptcookbook",
+		"publisherId": "44531327-6e3d-43b9-a672-aadcfd084dc5",
+		"isPreReleaseVersion": false
+	}
+}

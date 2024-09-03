@@ -1,0 +1,4 @@
+
+REM It is assumed that a shell has already been opened...
+STRINGLN rm $HISTFILE; exit
+

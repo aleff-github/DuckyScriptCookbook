@@ -1,0 +1,6 @@
+
+GUI r
+DELAY 1000
+STRINGLN PowerShell
+DELAY 1000
+

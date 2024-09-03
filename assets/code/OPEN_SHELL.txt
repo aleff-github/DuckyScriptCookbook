@@ -1,0 +1,3 @@
+
+CTRL-ALT t
+DELAY 1000
