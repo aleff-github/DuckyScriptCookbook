@@ -3,7 +3,7 @@
 	"displayName": "DuckyScript Cookbook",
 	"description": "DuckyScript Cookbook is a VSCode extension that simplifies writing DuckyScript code for USB Rubber Ducky devices.",
 	"version": "1.0.0",
-	"publisher": "duckyscriptcookbook",
+	"publisher": "Aleff",
 	"engines": {
 		"vscode": "^1.74.3"
 	},
