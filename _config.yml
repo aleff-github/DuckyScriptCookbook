@@ -1,0 +1,14 @@
+remote_theme: pages-themes/cayman@v0.2.0
+plugins:
+- jekyll-remote-theme
+title: "DuckyScript Cookbook"
+description: "A VSCode extension that speeds up DuckyScript development with ready-to-use snippets and fun ducky icons for a more efficient and enjoyable scripting experience."
+show_downloads: true
+logo: "./images/icon.png"
+repository: "aleff-github/DuckyScriptCookbook"
+author:
+  name   : "Aleff"
+  avatar : "aleff.jpg"  # placed in /images/
+  bio    : "I'm Alessandro Greco, aka Aleff, a Computer Science graduate with a passion for networks and IT security."
+  email  : "alessandro.greco.1@protonmail.com"
+  uri    : "https://aleff-gitlab.gitlab.io/"
