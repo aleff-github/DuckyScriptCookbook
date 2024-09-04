@@ -6,16 +6,25 @@ Welcome to the **DuckyScript Cookbook** — your quacktastic assistant for whipp
 
 ⚠️ This extension is in a beta version, many things still need to be added, report them if you like! ⚠️
 
-## Release
+<img src="https://github.com/VSCodium/icons/raw/main/icons/linux/nobg/blue1/paulo22s.png" width="50" /> - _VSCodium soon..._ - <a href="https://marketplace.visualstudio.com/items?itemName=Aleff.duckyscriptcookbook"><img src="https://code.visualstudio.com/assets/images/code-stable.png" width="50" /></a>
 
+## Index
 
-<img src="https://github.com/VSCodium/icons/raw/main/icons/linux/nobg/blue1/paulo22s.png" width="50" />
+- [What's Cooking? 🍳](#whats-cooking-)
+- [Features That Will Make You Quack with Joy 🥳](#features-that-will-make-you-quack-with-joy-)
+  - [🐤 A Duck Icon for Your Text Files](#-a-duck-icon-for-your-text-files)
+  - [📖 Ready-to-Use Recipes (Sadly, Not Edible)](#-ready-to-use-recipes-sadly-not-edible)
+  - [📝 Useful Snippets and Where to Find Them](#-useful-snippets-and-where-to-find-them)
+  - [😎 A Cool Style to Show Off to Your Desk Neighbors](#-a-cool-style-to-show-off-to-your-desk-neighbors)
+- [How to Use This Ducktastic Extension 🦆💻](#how-to-use-this-ducktastic-extension-)
+- [Why You'll Love It ❤️](#why-youll-love-it-%EF%B8%8F)
+- [Feedback and Contributions 🗣️](feedback-and-contributions-%EF%B8%8F)
+- [License 📄](#license-)
+- [Special Thanks 🎉](#special-thanks-)
+- [↳ Stargazers](#-stargazers)
+- [↳ Forkers](#-forkers)
+- [Credits](#credits)
 
-> **VSCodium** - _Soon..._
-
-<a href="https://marketplace.visualstudio.com/items?itemName=Aleff.duckyscriptcookbook"><img src="https://code.visualstudio.com/assets/images/code-stable.png" width="50" /></a>
-
-> **VSCode** - _https://marketplace.visualstudio.com/items?itemName=Aleff.duckyscriptcookbook_
 
 ## What's Cooking? 🍳
 
@@ -98,6 +107,13 @@ A big quacking thank you to all the developers and contributors who made this pr
 
 Happy Hacking and may the ducks be ever in your favor! 🦆💻✨
 
+## ↳ Stargazers
+
+[![Stargazers repo roster for @aleff-github/DuckyScriptCookbook](https://reporoster.com/stars/aleff-github/DuckyScriptCookbook)](https://github.com/aleff-github/DuckyScriptCookbook/stargazers)
+
+## ↳ Forkers
+
+[![Forkers repo roster for @aleff-github/DuckyScriptCookbook](https://reporoster.com/forks/aleff-github/DuckyScriptCookbook)](https://github.com/aleff-github/DuckyScriptCookbook/network/members)
 
 ## Credits
 
