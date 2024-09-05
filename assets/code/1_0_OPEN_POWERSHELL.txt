@@ -1,4 +1,5 @@
 
+DELAY 2000
 GUI r
 DELAY 1000
 STRING PowerShell
