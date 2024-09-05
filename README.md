@@ -4,6 +4,8 @@
 
 Welcome to the **DuckyScript Cookbook** — your quacktastic assistant for whipping up DuckyScript magic in no time! 🚀
 
+_This is not an official extension of Hak5 or Flipper Zero but was developed by a third party._
+
 ⚠️ This extension is in a beta version, many things still need to be added, report them if you like! ⚠️
 
 <img src="https://github.com/VSCodium/icons/raw/main/icons/linux/nobg/blue1/paulo22s.png" width="50" /> - _VSCodium soon..._ - <a href="https://marketplace.visualstudio.com/items?itemName=Aleff.duckyscriptcookbook"><img src="https://code.visualstudio.com/assets/images/code-stable.png" width="50" /></a>
