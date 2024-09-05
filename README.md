@@ -8,6 +8,8 @@ Welcome to the **DuckyScript Cookbook** — your quacktastic assistant for whipp
 
 <img src="https://github.com/VSCodium/icons/raw/main/icons/linux/nobg/blue1/paulo22s.png" width="50" /> - _VSCodium soon..._ - <a href="https://marketplace.visualstudio.com/items?itemName=Aleff.duckyscriptcookbook"><img src="https://code.visualstudio.com/assets/images/code-stable.png" width="50" /></a>
 
+![](https://github.com/aleff-github/Deposito/blob/main/DuckyScriptCookbook/Hak5%20Disclaimer.png?raw=true)
+
 ## Index
 
 - [What's Cooking? 🍳](#whats-cooking-)
