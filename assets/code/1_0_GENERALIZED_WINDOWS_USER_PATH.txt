@@ -1,0 +1,8 @@
+REM To generalize the username so that the script works for any user, you can use the variable $env:USERPROFILE, which points to the current user's profile directory.
+
+REM In this example you will go inside the “Documents” folder of the currently logged in user.
+
+REM To change it change the end part of the command.
+
+STRING $path = Join-Path -Path $env:USERPROFILE -ChildPath "Documents"
+ENTER

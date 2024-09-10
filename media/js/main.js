@@ -21,11 +21,13 @@
         'EXFILTRATE_FILES_USING_DROPBOX_WINDOWS_3_0': function () { vscode.postMessage({ type: 'EXFILTRATE_FILES_USING_DROPBOX_WINDOWS_3_0' }); },
         'OPEN_POWERSHELL_3_0': function () { vscode.postMessage({ type: 'OPEN_POWERSHELL_3_0' }); },
         'SAVE_FILES_IN_RUBBER_DUCKY_STORAGE_WINDOWS_3_0': function () { vscode.postMessage({ type: 'SAVE_FILES_IN_RUBBER_DUCKY_STORAGE_WINDOWS_3_0' }); },
+        'GENERALIZED_WINDOWS_USER_PATH_3_0': function () { vscode.postMessage({ type: 'GENERALIZED_WINDOWS_USER_PATH_3_0' }); },
         'PAYLOAD_INTRO_1_0': function () { vscode.postMessage({ type: 'PAYLOAD_INTRO_1_0' }); },
         'ERASE_TRACES_POWERSHELL_1_0': function () { vscode.postMessage({ type: 'ERASE_TRACES_POWERSHELL_1_0' }); },
         'ERASE_TRACES_SHELL_1_0': function () { vscode.postMessage({ type: 'ERASE_TRACES_SHELL_1_0' }); },
         'EXFILTRATE_FILES_USING_DROPBOX_WINDOWS_1_0': function () { vscode.postMessage({ type: 'EXFILTRATE_FILES_USING_DROPBOX_WINDOWS_1_0' }); },
         'OPEN_POWERSHELL_1_0': function () { vscode.postMessage({ type: 'OPEN_POWERSHELL_1_0' }); },
+        'GENERALIZED_WINDOWS_USER_PATH_1_0': function () { vscode.postMessage({ type: 'GENERALIZED_WINDOWS_USER_PATH_1_0' }); },
         'OPEN_SHELL': function () { vscode.postMessage({ type: 'OPEN_SHELL' }); },
     };
 

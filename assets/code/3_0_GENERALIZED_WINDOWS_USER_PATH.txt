@@ -1,0 +1,9 @@
+REM_BLOCK
+    To generalize the username so that the script works for any user, you can use the variable $env:USERPROFILE, which points to the current user's profile directory.
+    In this example you will go inside the “Documents” folder of the currently logged in user.
+END_REM
+
+REM Change this variable to access the subfolder or subpath you want to reach, for example Documents/private/etc...
+DEFINE #SUBDIRECTORY example
+
+STRINGLN $path = Join-Path -Path $env:USERPROFILE -ChildPath "#SUBDIRECTORY"

@@ -88,6 +88,12 @@ export class CodePanelViewProvider implements vscode.WebviewViewProvider {
 						editBuilder.replace(selection, code.duckyscript(this._extension.asAbsolutePath(PATH_TO_COOKBOOK.SAVE_FILES_IN_RUBBER_DUCKY_STORAGE_WINDOWS_3_0)));
 					});
 					break;
+				case 'GENERALIZED_WINDOWS_USER_PATH_3_0':
+					active.edit(editBuilder => {
+						const code = new cpanel.Code(this._extension.extensionUri);
+						editBuilder.replace(selection, code.duckyscript(this._extension.asAbsolutePath(PATH_TO_COOKBOOK.GENERALIZED_WINDOWS_USER_PATH_3_0)));
+					});
+					break;
 
 				// DuckyScript 1.0 Payloads
 				case 'PAYLOAD_INTRO_1_0':
@@ -118,6 +124,12 @@ export class CodePanelViewProvider implements vscode.WebviewViewProvider {
 					active.edit(editBuilder => {
 						const code = new cpanel.Code(this._extension.extensionUri);
 						editBuilder.replace(selection, code.duckyscript(this._extension.asAbsolutePath(PATH_TO_COOKBOOK.OPEN_POWERSHELL_1_0)));
+					});
+					break;
+				case 'GENERALIZED_WINDOWS_USER_PATH_1_0':
+					active.edit(editBuilder => {
+						const code = new cpanel.Code(this._extension.extensionUri);
+						editBuilder.replace(selection, code.duckyscript(this._extension.asAbsolutePath(PATH_TO_COOKBOOK.GENERALIZED_WINDOWS_USER_PATH_1_0)));
 					});
 					break;
 
@@ -222,6 +234,9 @@ function getCodePanelBody() {
 				<a href="#" class="btn" role="button" data-act="SAVE_FILES_IN_RUBBER_DUCKY_STORAGE_WINDOWS_3_0">
 					<li><span>Save Files In Rubber Ducky Storage - Windows</span></li>
 				</a>
+				<a href="#" class="btn" role="button" data-act="GENERALIZED_WINDOWS_USER_PATH_3_0">
+					<li><span>Generalized Windows User Path</span></li>
+				</a>
 				<a href="#" class="btn" role="button" data-act="OPEN_SHELL">
 					<li><span>Open A Shell</span></li>
 				</a>
@@ -250,6 +265,9 @@ function getCodePanelBody() {
 					</a>
 					<a href="#" class="btn" role="button" data-act="OPEN_POWERSHELL_1_0">
 						<li><span>Open Powershell</span></li>
+					</a>
+					<a href="#" class="btn" role="button" data-act="GENERALIZED_WINDOWS_USER_PATH_1_0">
+						<li><span>Generalized Windows User Path</span></li>
 					</a>
 					<a href="#" class="btn" role="button" data-act="OPEN_SHELL">
 						<li><span>Open A Shell</span></li>
