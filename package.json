@@ -34,6 +34,25 @@
 				}
 			}
 		],
+		"grammars": [
+			{
+				"language": "duckyscript",
+				"scopeName": "source.duckyscript",
+				"path": "./syntaxes/duckyscript.tmLanguage.json"
+			}
+		],
+		"themes": [
+			{
+				"label": "DarkDuckyScript",
+				"uiTheme": "vs-dark",
+				"path": "./themes/DarkDuckyScript-color-theme.json"
+			},
+			{
+				"label": "LightDuckyScript",
+				"uiTheme": "vs",
+				"path": "./themes/LightDuckyScript-color-theme.json"
+			}
+		],
 		"commands": [
 			{
 				"command": "duckyscript.Cookbook",

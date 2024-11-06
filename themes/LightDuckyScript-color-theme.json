@@ -1,0 +1,54 @@
+{
+	"name": "DuckyScript",
+	"type": "light",
+	"tokenColors": [
+		{
+			"name": "Comment",
+			"scope": [
+				"comment.inline.duckyscript",
+				"comment.block.duckyscript"
+			],
+			"settings": {
+				"fontStyle": "italic",
+				"foreground": "#6B8E23"
+			}
+		},
+		{
+			"name": "Declaration Keyword",
+			"scope": [
+				"keyword.declaration.duckyscript"
+			],
+			"settings": {
+				"foreground": "#1E90FF"
+			}
+		},
+		{
+			"name": "Operator Keyword",
+			"scope": [
+				"keyword.operator.duckyscript"
+			],
+			"settings": {
+				"foreground": "#D2691E"
+			}
+		},
+		{
+			"name": "Statement Keyword",
+			"scope": [
+				"keyword.statement.duckyscript"
+			],
+			"settings": {
+				"foreground": "#FF8C00"
+			}
+		},
+		{
+			"name": "True Condition Keyword",
+			"scope": [
+				"keyword.truecondition.duckyscript"
+			],
+			"settings": {
+				"foreground": "#8A2BE2"
+			}
+		}
+	],
+	"semanticHighlighting": true,
+  }

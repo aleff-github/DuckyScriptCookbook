@@ -1,0 +1,90 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "DuckyScript",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#keywords"
+		}
+	],
+	"repository": {
+		"comments": {
+			"patterns": [
+				{
+					"include": "#in_line_comment"
+				},
+				{
+					"include": "#multi_line_comment"
+				}
+			],
+			"repository": {
+				"in_line_comment": {
+					"patterns": [
+						{
+							"name": "comment.inline.duckyscript",
+							"match": "^REM\\s+.*$"
+						}
+					]
+				},
+				"multi_line_comment": {
+					"begin": "^REM_BLOCK(?:\\s.*)?$",
+					"end": "^.*END_REM",
+					"name": "comment.block.duckyscript"
+				}
+			}
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"include": "#declaration_keywords"
+				},
+				{
+					"include": "#operator_keywords"
+				},
+				{
+					"include": "#statement_keywords"
+				},
+				{
+					"include": "#true_condition_keywords"
+				}
+			],
+			"repository": {
+				"declaration_keywords": {
+					"patterns": [
+						{
+							"name": "keyword.declaration.duckyscript",
+							"match": "(DEFINE|VAR)"
+						}
+					]
+				},
+				"operator_keywords": {
+					"patterns": [
+						{
+							"name": "keyword.operator.duckyscript",
+							"match": "(=|+|-|*|/|%|^)"
+						}
+					]
+				},
+				"statement_keywords": {
+					"patterns": [
+						{
+							"name": "keyword.statement.duckyscript",
+							"match": "(IF|ELSE|THEN|END_IF|WHILE|END_WHILE)"
+						}
+					]
+				},
+				"true_condition_keywords": {
+					"patterns": [
+						{
+							"name": "keyword.truecondition.duckyscript",
+							"match": "(TRUE|FALSE)"
+						}
+					]
+				}
+			}
+		}
+	},
+	"scopeName": "source.asp"
+}
