@@ -1,7 +1,5 @@
 # 🦆 DuckyScript Cookbook
 
-[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Faleff-github%2FDuckyScriptCookbook%2F&count_bg=%23FFBD11&title_bg=%23800000&icon=visualstudiocode.svg&icon_color=%233CA8F1&title=HITS&edge_flat=false)](https://hits.seeyoufarm.com) ![Licence](https://img.shields.io/badge/Licence-GPLv3-%239e264c?style=for-the-badge)
-
 Welcome to the **DuckyScript Cookbook** — your quacktastic assistant for whipping up DuckyScript magic in no time! 🚀
 
 _This is not an official extension of Hak5 or Flipper Zero but was developed by a third party._
