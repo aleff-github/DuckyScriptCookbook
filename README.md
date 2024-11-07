@@ -6,29 +6,17 @@ Welcome to the **DuckyScript Cookbook** — your quacktastic assistant for whipp
 
 _This is not an official extension of Hak5 or Flipper Zero but was developed by a third party._
 
-⚠️ This extension is in a beta version, many things still need to be added, report them if you like! ⚠️
-
-<img src="https://github.com/VSCodium/icons/raw/main/icons/linux/nobg/blue1/paulo22s.png" width="50" /> - _VSCodium soon..._ - <a href="https://marketplace.visualstudio.com/items?itemName=Aleff.duckyscriptcookbook"><img src="https://code.visualstudio.com/assets/images/code-stable.png" width="50" /></a>
+<a href="https://marketplace.visualstudio.com/items?itemName=Aleff.duckyscriptcookbook"><img src="https://code.visualstudio.com/assets/images/code-stable.png" width="50" /></a>
 
 ![](https://github.com/aleff-github/Deposito/blob/main/DuckyScriptCookbook/Hak5%20Disclaimer.png?raw=true)
 
-## Index
+## New Feature: Syntax Highlighting Dark && Light
 
-- [What's Cooking? 🍳](#whats-cooking-)
-- [Features That Will Make You Quack with Joy 🥳](#features-that-will-make-you-quack-with-joy-)
-  - [🐤 A Duck Icon for Your Text Files](#-a-duck-icon-for-your-text-files)
-  - [📖 Ready-to-Use Recipes (Sadly, Not Edible)](#-ready-to-use-recipes-sadly-not-edible)
-  - [📝 Useful Snippets and Where to Find Them](#-useful-snippets-and-where-to-find-them)
-  - [😎 A Cool Style to Show Off to Your Desk Neighbors](#-a-cool-style-to-show-off-to-your-desk-neighbors)
-- [How to Use This Ducktastic Extension 🦆💻](#how-to-use-this-ducktastic-extension-)
-- [Why You'll Love It ❤️](#why-youll-love-it-%EF%B8%8F)
-- [Feedback and Contributions 🗣️](feedback-and-contributions-%EF%B8%8F)
-- [License 📄](#license-)
-- [Special Thanks 🎉](#special-thanks-)
-- [↳ Stargazers](#-stargazers)
-- [↳ Forkers](#-forkers)
-- [Credits](#credits)
+To properly enable Syntax Highlighting you need to enable the Dark or Light theme of DuckyScript. To do this you can click F1, type “theme” and select the theme you like best.
 
+![](https://github.com/aleff-github/Deposito/blob/main/DuckyScriptCookbook/dark.png?raw=true)
+
+![](https://github.com/aleff-github/Deposito/blob/main/DuckyScriptCookbook/light.png?raw=true)
 
 ## What's Cooking? 🍳
 

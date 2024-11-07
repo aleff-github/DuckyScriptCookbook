@@ -45,7 +45,7 @@ body {
     -webkit-user-drag: none;
     -khtml-user-drag: none;
   
-    background: rgb(37, 37, 38);
+    background: #4373c2;
     color: white;
   }
   
@@ -124,7 +124,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #000;
+  background: #011627;
   min-height: 100vh;
 }
 .list {

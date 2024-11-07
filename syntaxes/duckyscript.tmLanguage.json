@@ -1,90 +1,54 @@
 {
-	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "DuckyScript",
+	"scopeName": "source.duckyscript",
 	"patterns": [
 		{
 			"include": "#comments"
 		},
 		{
 			"include": "#keywords"
+		},
+		{
+			"include": "#code_blocks"
 		}
 	],
 	"repository": {
 		"comments": {
 			"patterns": [
 				{
-					"include": "#in_line_comment"
+					"name": "comments.inline.duckyscript",
+					"match": "^\\s*\\t*REM\\s+.*$"
 				},
 				{
-					"include": "#multi_line_comment"
-				}
-			],
-			"repository": {
-				"in_line_comment": {
-					"patterns": [
-						{
-							"name": "comment.inline.duckyscript",
-							"match": "^REM\\s+.*$"
-						}
-					]
-				},
-				"multi_line_comment": {
-					"begin": "^REM_BLOCK(?:\\s.*)?$",
+					"begin": "^\\s*\\t*REM_BLOCK(?:\\s.*)?$",
 					"end": "^.*END_REM",
-					"name": "comment.block.duckyscript"
+					"name": "comments.block.duckyscript"
 				}
-			}
+			]
 		},
 		"keywords": {
 			"patterns": [
 				{
-					"include": "#declaration_keywords"
+					"name": "keywords.declaration.duckyscript",
+					"match": "(#|\\$)([A-Za-z0-9_-]+)"
 				},
 				{
-					"include": "#operator_keywords"
+					"name": "keywords.operator.duckyscript",
+					"match": "(=|\\+|-|\\*|/|%|\\^|&|!=|<|>|\\|)"
 				},
 				{
-					"include": "#statement_keywords"
+					"name": "keywords.statement.duckyscript",
+					"match": "(?<=\\s|\\t|^)(EXTENSION|END_EXTENSION|DEFINE|VAR|IF|ELSE|THEN|END_IF|WHILE|END_WHILE|FUNCTION|END_FUNCTION|[A-Za-z0-9]+\\(.*\\))(?=\\s|\\t|$)"
 				},
 				{
-					"include": "#true_condition_keywords"
+					"name": "keywords.truecondition.duckyscript",
+					"match": "(TRUE|FALSE)"
+				},
+				{
+					"name": "keywords.command.duckyscript",
+					"match": "(?<=\\s|\\t|^)(STRING|STRING_POWERSHELL|STRING_BATCH|STRING_BASH|STRING_JAVASCRIPT|STRING_PYTHON|STRING_RUBY|STRING_HTML|END_STRING|STRINGLN|STRINGLN_POWERSHELL|STRINGLN_BATCH|STRINGLN_BASH|STRINGLN_JAVASCRIPT|STRINGLN_PYTHON|STRINGLN_RUBY|STRINGLN_HTML|END_STRINGLN|DELAY|ATTACKMODE|ENTER|ESCAPE|SHIFT|ALT|CTRL|GUI|DOWNARROW|DOWN|UPARROW|UP|LEFTARROW|LEFT|RIGHTARROW|RIGHT|TAB|CAPSLOCK|DELETE|DEL|END|ESC|HOME|INSERT|PAGEUP|PAGEDOWN|PRINTSCREEN|SPACE|BACKSPACE|BREAK|PAUSE|MENU|APP|F1|F2|F3|F4|F5|F6|F7|F8|F9|F10|F11|F12|NUMLOCK|SCROLLLOCK|WINDOWS|CONTROL|COMMAND|OPTION|INJECT_MOD|WAIT_FOR_BUTTON_PRESS|LED_OFF|LED_R|LED_G|HID|STORAGE|OFF|ATTACKMODE|RANDOM_LOWERCASE_LETTER|RANDOM_UPPERCASE_LETTER|RANDOM_LETTER|RANDOM_NUMBER|RANDOM_SPECIAL|RANDOM_CHAR|VID_RANDOM|PID_RANDOM|MAN_RANDOM|PROD_RANDOM|SERIAL_RANDOM|HOLD|RESET|RESTART_PAYLOAD|STOP_PAYLOAD|HIDE_PAYLOAD|RESTORE_PAYLOAD|WAIT_FOR_CAPS_ON|WAIT_FOR_CAPS_OFF|WAIT_FOR_CAPS_CHANGE|WAIT_FOR_NUM_ON|WAIT_FOR_NUM_OFF|WAIT_FOR_NUM_CHANGE|WAIT_FOR_SCROLL_ON|WAIT_FOR_SCROLL_OFF|WAIT_FOR_SCROLL_CHANGE|SAVE_HOST_KEYBOARD_LOCK_STATE|RESTORE_HOST_KEYBOARD_LOCK_STATE|EXFIL)(?=\\s|\\t|$)"
 				}
-			],
-			"repository": {
-				"declaration_keywords": {
-					"patterns": [
-						{
-							"name": "keyword.declaration.duckyscript",
-							"match": "(DEFINE|VAR)"
-						}
-					]
-				},
-				"operator_keywords": {
-					"patterns": [
-						{
-							"name": "keyword.operator.duckyscript",
-							"match": "(=|+|-|*|/|%|^)"
-						}
-					]
-				},
-				"statement_keywords": {
-					"patterns": [
-						{
-							"name": "keyword.statement.duckyscript",
-							"match": "(IF|ELSE|THEN|END_IF|WHILE|END_WHILE)"
-						}
-					]
-				},
-				"true_condition_keywords": {
-					"patterns": [
-						{
-							"name": "keyword.truecondition.duckyscript",
-							"match": "(TRUE|FALSE)"
-						}
-					]
-				}
-			}
+			]
 		}
-	},
-	"scopeName": "source.asp"
+	}
 }

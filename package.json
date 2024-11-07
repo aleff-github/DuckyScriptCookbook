@@ -2,7 +2,7 @@
 	"name": "duckyscriptcookbook",
 	"displayName": "DuckyScript Cookbook",
 	"description": "DuckyScript Cookbook is a VSCode extension that simplifies writing DuckyScript code for USB Rubber Ducky devices.",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"publisher": "Aleff",
 	"engines": {
 		"vscode": "^1.74.3"
@@ -12,6 +12,7 @@
 	},
 	"categories": [
 		"Programming Languages",
+		"Themes",
 		"Snippets"
 	],
 	"main": "./out/extension.js",
@@ -21,6 +22,7 @@
 				"id": "duckyscript",
 				"aliases": [
 					"DuckyScript",
+					"duckyscript",
 					"ds"
 				],
 				"extensions": [
@@ -31,7 +33,8 @@
 				"icon": {
 					"light": "./images/icon.png",
 					"dark": "./images/icon.png"
-				}
+				},
+                "configuration": "./language-configuration.json"
 			}
 		],
 		"grammars": [
@@ -44,7 +47,7 @@
 		"themes": [
 			{
 				"label": "DarkDuckyScript",
-				"uiTheme": "vs-dark",
+				"uiTheme": "vs",
 				"path": "./themes/DarkDuckyScript-color-theme.json"
 			},
 			{
