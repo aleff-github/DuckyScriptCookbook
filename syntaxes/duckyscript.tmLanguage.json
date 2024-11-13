@@ -38,7 +38,7 @@
 				},
 				{
 					"name": "keywords.statement.duckyscript",
-					"match": "(?<=\\s|\\t|^)(EXTENSION|END_EXTENSION|DEFINE|VAR|IF|ELSE|THEN|END_IF|WHILE|END_WHILE|FUNCTION|END_FUNCTION|[A-Za-z0-9]+\\(.*\\))(?=\\s|\\t|$)"
+					"match": "(?<=\\s|\\t|^)(EXTENSION|END_EXTENSION|DEFINE|VAR|IF|ELSE|THEN|END_IF|IF_DEFINED_TRUE|END_IF_DEFINED|WHILE|END_WHILE|FUNCTION|END_FUNCTION|[A-Za-z0-9]+\\(.*\\))(?=\\s|\\t|$)"
 				},
 				{
 					"name": "keywords.truecondition.duckyscript",
