@@ -22,9 +22,7 @@ _This is not an official extension of Hak5 or Flipper Zero but was developed by 
 
 To properly enable Syntax Highlighting you need to enable the Dark or Light theme of DuckyScript. To do this you can click F1, type “theme” and select the theme you like best.
 
-![](https://github.com/aleff-github/Deposito/blob/main/DuckyScriptCookbook/dark.png?raw=true)
-
-![](https://github.com/aleff-github/Deposito/blob/main/DuckyScriptCookbook/light.png?raw=true)
+![](https://github.com/aleff-github/Deposito/blob/main/DuckyScriptCookbook/syntax-highlighting.gif?raw=true)
 
 ### What's Cooking? 🍳
 
