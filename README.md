@@ -1,9 +1,10 @@
 # 🦆 DuckyScript Cookbook
 
-Welcome to the **DuckyScript Cookbook** — your quacktastic assistant for whipping up DuckyScript magic in no time! 🚀
+Welcome to the **DuckyScript Cookbook** - your quacktastic assistant for whipping up DuckyScript magic in no time! 🚀
 
-<a href="https://open-vsx.org/extension/Aleff/duckyscriptcookbook"><img src="https://vscodium.com/img/codium_cnl.svg" width="50" /></a> <a href="https://marketplace.visualstudio.com/items?itemName=Aleff.duckyscriptcookbook"><img src="https://code.visualstudio.com/assets/images/code-stable.png" width="50" /></a>
+## Available On
 
+ 🌟 <a href="https://open-vsx.org/extension/Aleff/duckyscriptcookbook"> <img src="https://vscodium.com/img/codium_cnl.svg" width="60" alt="VSCodium logo" style="vertical-align: middle; margin-right: 8px;"/> **VSCodium** </a> 🌟 <a href="https://marketplace.visualstudio.com/items?itemName=Aleff.duckyscriptcookbook"> <img src="https://code.visualstudio.com/assets/images/code-stable.png" width="60" alt="VSCode logo" style="vertical-align: middle; margin-right: 8px;"/> **VSCode** </a> 🌟 
 
 _This is not an official extension of Hak5 or Flipper Zero but was developed by a third party._
 

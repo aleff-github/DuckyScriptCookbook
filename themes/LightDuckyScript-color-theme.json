@@ -1841,21 +1841,23 @@
 			],
 			"settings": {
 				"fontStyle": "italic",
-				"foreground": "#6B8E23"
+				"foreground": "#68B030"
 			}
 		},
 		{
 			"name": "DuckyScript Declaration Keywords",
 			"scope": "keywords.declaration.duckyscript",
 			"settings": {
-				"foreground": "#1E90FF"
+				"fontStyle": "bold",
+				"foreground": "#2563EB"
 			}
 		},
 		{
 			"name": "DuckyScript Operator Keywords",
 			"scope": "keywords.operator.duckyscript",
 			"settings": {
-				"foreground": "#D2691E"
+				"fontStyle": "bold",
+				"foreground": "#9e264c"
 			}
 		},
 		{
@@ -1870,7 +1872,8 @@
 			"name": "DuckyScript True Condition Keywords",
 			"scope": "keywords.truecondition.duckyscript",
 			"settings": {
-				"foreground": "#8A2BE2"
+				"fontStyle": "bold",
+				"foreground": "#8ea34e"
 			}
 		},
 		{
@@ -1878,8 +1881,23 @@
 			"scope": "keywords.command.duckyscript",
 			"settings": {
 				"fontStyle": "bold",
-				"foreground": "#D14D4D"
+				"foreground": "#7D4698"
 			}
+		},
+		{
+		  "name": "USB Army Knife Commands",
+		  "scope": [
+			"usb_army_knife.userinterface.duckyscript",
+			"usb_army_knife.hardware.duckyscript",
+			"usb_army_knife.usbfunctionality.duckyscript",
+			"usb_army_knife.hostagent.duckyscript",
+			"usb_army_knife.filehandling.duckyscript",
+			"usb_army_knife.other.duckyscript"
+		  ],
+		  "settings": {
+			"fontStyle": "bold",
+			"foreground": "#4175a0"
+		  }
 		}
 	]
 }

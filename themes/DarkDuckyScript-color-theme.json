@@ -1831,14 +1831,16 @@
         "name": "DuckyScript Declaration Keywords",
         "scope": "keywords.declaration.duckyscript",
         "settings": {
-          "foreground": "#56B6C2"
+          "fontStyle": "bold",
+          "foreground": "#3B82F6"
         }
       },
       {
         "name": "DuckyScript Operator Keywords",
         "scope": "keywords.operator.duckyscript",
         "settings": {
-          "foreground": "#E06C75"
+          "fontStyle": "bold",
+          "foreground": "#b82b58"
         }
       },
       {
@@ -1853,12 +1855,28 @@
         "name": "DuckyScript True Condition Keywords",
         "scope": "keywords.truecondition.duckyscript",
         "settings": {
-          "foreground": "#C678DD"
+          "fontStyle": "bold",
+          "foreground": "#bdda68"
         }
       },
       {
         "name": "DuckyScript Command Keywords",
         "scope": "keywords.command.duckyscript",
+        "settings": {
+          "fontStyle": "bold",
+          "foreground": "#af63d5"
+        }
+      },
+      {
+        "name": "USB Army Knife Commands",
+        "scope": [
+          "usb_army_knife.userinterface.duckyscript",
+          "usb_army_knife.hardware.duckyscript",
+          "usb_army_knife.usbfunctionality.duckyscript",
+          "usb_army_knife.hostagent.duckyscript",
+          "usb_army_knife.filehandling.duckyscript",
+          "usb_army_knife.other.duckyscript"
+        ],
         "settings": {
           "fontStyle": "bold",
           "foreground": "#61AFEF"
