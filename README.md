@@ -19,7 +19,13 @@ _This is not an official extension of Hak5 or Flipper Zero but was developed by 
 
 ## Features
 
-### New Feature: Syntax Highlighting Dark && Light
+### New Feature: Tips While Writing (*This feature is not yet complete*)
+
+Now while you are writing you just need to press the CTRL SPACE combination to get some great tips from the official [Hak5 documentation](https://docs.hak5.org/hak5-usb-rubber-ducky). If you start writing down what you need, it will be even easier to reduce your search in the documentation!
+
+![](https://github.com/aleff-github/Deposito/blob/main/DuckyScriptCookbook/last_feature.gif?raw=true)
+
+### Syntax Highlighting Dark && Light
 
 To properly enable Syntax Highlighting you need to enable the Dark or Light theme of DuckyScript. To do this you can click F1, type “theme” and select the theme you like best.
 
