@@ -17,7 +17,7 @@ class MyLanguageCompletionItemProvider {
         const completions = ALL_COMMANDS.map((command) => {
             const item = new vscode.CompletionItem(command.label, vscode.CompletionItemKind.Keyword);
             item.detail = command.detail;
-            item.documentation = command.doc;
+            item.documentation = command.doc.appendMarkdown(`\n*Source: https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference*`);
             item.insertText = command.text;
             return item;
         });
@@ -40,7 +40,6 @@ function activate(context) {
     context.subscriptions.push(providerDisposable);
 }
 exports.activate = activate;
-// eslint-disable-next-line @typescript-eslint/no-empty-function
 function deactivate() { }
 module.exports = {
     activate,

@@ -24,7 +24,7 @@ System keys are primarily used by the operating system for special functions and
 
 \`F1\` \`F2\` \`F3\` \`F4\` \`F5\` \`F6\` \`F7\` \`F8\` \`F9\` \`F0\` \`F11\` \`F12\`
 
-*Source: https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference*`),
+`),
         text: ""
     }, {
         label: "SYSTEM.ENTER",
@@ -36,7 +36,7 @@ System keys are primarily used by the operating system for special functions and
 
 \`ENTER\`
 
-*Source: https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference*`),
+`),
         text: "ENTER"
     }, {
         label: "SYSTEM.ESCAPE",
@@ -48,7 +48,7 @@ System keys are primarily used by the operating system for special functions and
 
 \`ESCAPE\`
 
-*Source: https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference*`),
+`),
         text: "ESCAPE"
     }, {
         label: "SYSTEM.PAUSE-BREAK",
@@ -60,7 +60,7 @@ System keys are primarily used by the operating system for special functions and
 
 \`PAUSE BREAK\`
 
-*Source: https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference*`),
+`),
         text: "PAUSE BREAK"
     }, {
         label: "SYSTEM.PRINTSCREEN",
@@ -72,7 +72,7 @@ System keys are primarily used by the operating system for special functions and
 
 \`PRINTSCREEN\`
 
-*Source: https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference*`),
+`),
         text: "PRINTSCREEN"
     }, {
         label: "SYSTEM.MENU-APP",
@@ -84,7 +84,7 @@ System keys are primarily used by the operating system for special functions and
 
 \`MENU APP\`
 
-*Source: https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference*`),
+`),
         text: "MENU APP"
     }, {
         label: "SYSTEM.F1",
@@ -96,7 +96,7 @@ System keys are primarily used by the operating system for special functions and
 
 \`F1\`
 
-*Source: https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference*`),
+`),
         text: "F1"
     }, {
         label: "SYSTEM.F2",
@@ -108,7 +108,7 @@ System keys are primarily used by the operating system for special functions and
 
 \`F2\`
 
-*Source: https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference*`),
+`),
         text: "F2"
     }, {
         label: "SYSTEM.F3",
@@ -120,7 +120,7 @@ System keys are primarily used by the operating system for special functions and
 
 \`F3\`
 
-*Source: https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference*`),
+`),
         text: "F3"
     }, {
         label: "SYSTEM.F4",
@@ -132,7 +132,7 @@ System keys are primarily used by the operating system for special functions and
 
 \`F4\`
 
-*Source: https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference*`),
+`),
         text: "F4"
     }, {
         label: "SYSTEM.F5",
@@ -144,7 +144,7 @@ System keys are primarily used by the operating system for special functions and
 
 \`F5\`
 
-*Source: https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference*`),
+`),
         text: "F5"
     }, {
         label: "SYSTEM.F6",
@@ -156,7 +156,7 @@ System keys are primarily used by the operating system for special functions and
 
 \`F6\`
 
-*Source: https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference*`),
+`),
         text: "F6"
     }, {
         label: "SYSTEM.F7",
@@ -168,7 +168,7 @@ System keys are primarily used by the operating system for special functions and
 
 \`F7\`
 
-*Source: https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference*`),
+`),
         text: "F7"
     }, {
         label: "SYSTEM.F8",
@@ -180,7 +180,7 @@ System keys are primarily used by the operating system for special functions and
 
 \`F8\`
 
-*Source: https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference*`),
+`),
         text: "F8"
     }, {
         label: "SYSTEM.F9",
@@ -192,7 +192,7 @@ System keys are primarily used by the operating system for special functions and
 
 \`F9\`
 
-*Source: https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference*`),
+`),
         text: "F9"
     }, {
         label: "SYSTEM.F10",
@@ -204,7 +204,7 @@ System keys are primarily used by the operating system for special functions and
 
 \`F10\`
 
-*Source: https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference*`),
+`),
         text: "F10"
     }, {
         label: "SYSTEM.F11",
@@ -216,7 +216,7 @@ System keys are primarily used by the operating system for special functions and
 
 \`F11\`
 
-*Source: https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference*`),
+`),
         text: "F11"
     }, {
         label: "SYSTEM.F12",
@@ -228,7 +228,7 @@ System keys are primarily used by the operating system for special functions and
 
 \`F12\`
 
-*Source: https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference*`),
+`),
         text: "F12"
     }
 ];

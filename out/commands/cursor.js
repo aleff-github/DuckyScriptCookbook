@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CURSOR_COMMANDS = void 0;
 const vscode = require("vscode");
-// Here we define our commands with corresponding descriptions
 exports.CURSOR_COMMANDS = [
     {
         label: "CURSOR KEYS",
@@ -12,19 +11,19 @@ exports.CURSOR_COMMANDS = [
 
 The cursor keys are used to navigate the cursor to a different position on the screen.
 
->> \`UP\` \`DOWN\` \`LEFT\` \`RIGHT\`
+\`UP\` \`DOWN\` \`LEFT\` \`RIGHT\`
 
->> \`UPARROW\` \`DOWNARROW\` \`LEFTARROW\` \`RIGHTARROW\`
+\`UPARROW\` \`DOWNARROW\` \`LEFTARROW\` \`RIGHTARROW\`
 
->> \`PAGEUP\` \`PAGEDOWN\` \`HOME\` \`END\`
+\`PAGEUP\` \`PAGEDOWN\` \`HOME\` \`END\`
 
->> \`INSERT\` \`DELETE\` \`DEL\` \`BACKSPACE\`
+\`INSERT\` \`DELETE\` \`DEL\` \`BACKSPACE\`
 
->> \`TAB\`
+\`TAB\`
 
->> \`SPACE\`
+\`SPACE\`
 
-*Source: https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference*`),
+`),
         text: ""
     }, {
         label: "CURSOR.UP",
@@ -34,9 +33,9 @@ The cursor keys are used to navigate the cursor to a different position on the s
 
 The cursor keys are used to navigate the cursor to a different position on the screen.
 
->> \`UP\`
+\`UP\`
 
-*Source: https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference*`),
+`),
         text: "UP"
     }, {
         label: "CURSOR.DOWN",
@@ -46,9 +45,9 @@ The cursor keys are used to navigate the cursor to a different position on the s
 
 The cursor keys are used to navigate the cursor to a different position on the screen.
 
->> \`DOWN\`
+\`DOWN\`
 
-*Source: https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference*`),
+`),
         text: "DOWN"
     }, {
         label: "CURSOR.LEFT",
@@ -58,9 +57,9 @@ The cursor keys are used to navigate the cursor to a different position on the s
 
 The cursor keys are used to navigate the cursor to a different position on the screen.
 
->> \`LEFT\`
+\`LEFT\`
 
-*Source: https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference*`),
+`),
         text: "LEFT"
     }, {
         label: "CURSOR.RIGHT",
@@ -70,9 +69,9 @@ The cursor keys are used to navigate the cursor to a different position on the s
 
 The cursor keys are used to navigate the cursor to a different position on the screen.
 
->> \`RIGHT\`
+\`RIGHT\`
 
-*Source: https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference*`),
+`),
         text: "RIGHT"
     }, {
         label: "CURSOR.UPARROW",
@@ -82,9 +81,9 @@ The cursor keys are used to navigate the cursor to a different position on the s
 
 The cursor keys are used to navigate the cursor to a different position on the screen.
 
->> \`UPARROW\`
+\`UPARROW\`
 
-*Source: https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference*`),
+`),
         text: "UPARROW"
     }, {
         label: "CURSOR.DOWNARROW",
@@ -94,9 +93,9 @@ The cursor keys are used to navigate the cursor to a different position on the s
 
 The cursor keys are used to navigate the cursor to a different position on the screen.
 
->> \`DOWNARROW\`
+\`DOWNARROW\`
 
-*Source: https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference*`),
+`),
         text: "DOWNARROW"
     }, {
         label: "CURSOR.LEFTARROW",
@@ -106,9 +105,9 @@ The cursor keys are used to navigate the cursor to a different position on the s
 
 The cursor keys are used to navigate the cursor to a different position on the screen.
 
->> \`LEFTARROW\`
+\`LEFTARROW\`
 
-*Source: https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference*`),
+`),
         text: "LEFTARROW"
     }, {
         label: "CURSOR.RIGHTARROW",
@@ -118,9 +117,9 @@ The cursor keys are used to navigate the cursor to a different position on the s
 
 The cursor keys are used to navigate the cursor to a different position on the screen.
 
->> \`RIGHTARROW\`
+\`RIGHTARROW\`
 
-*Source: https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference*`),
+`),
         text: "RIGHTARROW"
     }, {
         label: "CURSOR.PAGEUP",
@@ -130,9 +129,9 @@ The cursor keys are used to navigate the cursor to a different position on the s
 
 The cursor keys are used to navigate the cursor to a different position on the screen.
 
->> \`PAGEUP\`
+\`PAGEUP\`
 
-*Source: https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference*`),
+`),
         text: "PAGEUP"
     }, {
         label: "CURSOR.PAGEDOWN",
@@ -142,9 +141,9 @@ The cursor keys are used to navigate the cursor to a different position on the s
 
 The cursor keys are used to navigate the cursor to a different position on the screen.
 
->> \`PAGEDOWN\`
+\`PAGEDOWN\`
 
-*Source: https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference*`),
+`),
         text: "PAGEDOWN"
     }, {
         label: "CURSOR.HOME",
@@ -154,9 +153,9 @@ The cursor keys are used to navigate the cursor to a different position on the s
 
 The cursor keys are used to navigate the cursor to a different position on the screen.
 
->> \`HOME\`
+\`HOME\`
 
-*Source: https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference*`),
+`),
         text: "HOME"
     }, {
         label: "CURSOR.END",
@@ -166,9 +165,9 @@ The cursor keys are used to navigate the cursor to a different position on the s
 
 The cursor keys are used to navigate the cursor to a different position on the screen.
 
->> \`END\`
+\`END\`
 
-*Source: https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference*`),
+`),
         text: "END"
     }, {
         label: "CURSOR.INSERT",
@@ -178,9 +177,9 @@ The cursor keys are used to navigate the cursor to a different position on the s
 
 The cursor keys are used to navigate the cursor to a different position on the screen.
 
->> \`INSERT\`
+\`INSERT\`
 
-*Source: https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference*`),
+`),
         text: "INSERT"
     }, {
         label: "CURSOR.DELETE",
@@ -190,9 +189,9 @@ The cursor keys are used to navigate the cursor to a different position on the s
 
 The cursor keys are used to navigate the cursor to a different position on the screen.
 
->> \`DELETE\`
+\`DELETE\`
 
-*Source: https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference*`),
+`),
         text: "DELETE"
     }, {
         label: "CURSOR.DEL",
@@ -202,9 +201,9 @@ The cursor keys are used to navigate the cursor to a different position on the s
 
 The cursor keys are used to navigate the cursor to a different position on the screen.
 
->> \`DEL\`
+\`DEL\`
 
-*Source: https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference*`),
+`),
         text: "DEL"
     }, {
         label: "CURSOR.BACKSPACE",
@@ -214,9 +213,9 @@ The cursor keys are used to navigate the cursor to a different position on the s
 
 The cursor keys are used to navigate the cursor to a different position on the screen.
 
->> \`BACKSPACE\`
+\`BACKSPACE\`
 
-*Source: https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference*`),
+`),
         text: "BACKSPACE"
     }, {
         label: "CURSOR.TAB",
@@ -226,9 +225,9 @@ The cursor keys are used to navigate the cursor to a different position on the s
 
 The cursor keys are used to navigate the cursor to a different position on the screen.
 
->> \`TAB\`
+\`TAB\`
 
-*Source: https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference*`),
+`),
         text: "TAB"
     }, {
         label: "CURSOR.SPACE",
@@ -238,9 +237,9 @@ The cursor keys are used to navigate the cursor to a different position on the s
 
 The cursor keys are used to navigate the cursor to a different position on the screen.
 
->> \`SPACE\`
+\`SPACE\`
 
-*Source: https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference*`),
+`),
         text: "SPACE"
     }
 ];

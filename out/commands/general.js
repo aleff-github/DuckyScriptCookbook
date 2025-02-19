@@ -15,7 +15,7 @@ The \`REM\` command does not perform any keystroke injection functions. \`REM\` 
 REM This is a comment
 \`\`\`
         
-*Source: https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference*`),
+`),
         text: "REM Hello World!"
     },
     {
@@ -36,7 +36,7 @@ REM_BLOCK DOCUMENTATION
 END_REM
 \`\`\`
 
-*Source: https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference*`),
+`),
         text: "REM_BLOCK\n\tHello World!\nEND_REM"
     }, {
         label: "STRING",
@@ -50,7 +50,7 @@ The \`STRING\` command keystroke injects (types) a series of keystrokes. \`STRIN
 STRING The quick brown fox jumps over the lazy dog
 \`\`\`
 
-*Source: https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference*`),
+`),
         text: "STRING Hello World!"
     }, {
         label: "STRINGLN",
@@ -66,7 +66,7 @@ STRINGLN   __(.)< __(.)> __(.)=   Rubber   >(.)__ <(.)__ =(.)__
 STRINGLN   \___)  \___)  \___)  Ducky!  (___/  (___/  (___/
 \`\`\`
 
-*Source: https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference*`),
+`),
         text: "STRINGLN Hello World!"
     }, {
         label: "STRING BLOCK",
@@ -94,7 +94,7 @@ STRING c
 
 Or in this case: \`STRING abc\`
 
-*Source: https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference*`),
+`),
         text: "STRING\n\tHello \n\tWorld!\nEND_STRING"
     }, {
         label: "STRINGLN BLOCK",
@@ -130,7 +130,7 @@ b
 c
 \`\`\`
 
-*Source: https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference*`),
+`),
         text: "STRINGLN\n\tHello \n\tWorld!\nEND_STRINGLN"
     }
 ];

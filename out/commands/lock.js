@@ -11,14 +11,14 @@ exports.LOCK_COMMANDS = [
 
 Lock keys toggle the lock state (on or off) and typically change the interpretation of subsequent keypresses. For example, caps lock generally makes all subsequent letter keys appear in uppercase.
 
->> \`CAPSLOCK\`
+\`CAPSLOCK\`
 
->> \`NUMLOCK\`
+\`NUMLOCK\`
 
->> \`SCROLLOCK\`
+\`SCROLLOCK\`
 
 
-*Source: https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference*`),
+`),
         text: ""
     }, {
         label: "LOCK.CAPSLOCK",
@@ -28,9 +28,9 @@ Lock keys toggle the lock state (on or off) and typically change the interpretat
 
 Lock keys toggle the lock state (on or off) and typically change the interpretation of subsequent keypresses. For example, caps lock generally makes all subsequent letter keys appear in uppercase.
 
->> \`CAPSLOCK\`
+\`CAPSLOCK\`
 
-*Source: https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference*`),
+`),
         text: "CAPSLOCK"
     }, {
         label: "LOCK.NUMLOCK",
@@ -40,9 +40,9 @@ Lock keys toggle the lock state (on or off) and typically change the interpretat
 
 Lock keys toggle the lock state (on or off) and typically change the interpretation of subsequent keypresses. For example, caps lock generally makes all subsequent letter keys appear in uppercase.
 
->> \`NUMLOCK\`
+\`NUMLOCK\`
 
-*Source: https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference*`),
+`),
         text: "NUMLOCK"
     }, {
         label: "LOCK.SCROLLOCK",
@@ -52,9 +52,7 @@ Lock keys toggle the lock state (on or off) and typically change the interpretat
 
 Lock keys toggle the lock state (on or off) and typically change the interpretation of subsequent keypresses. For example, caps lock generally makes all subsequent letter keys appear in uppercase.
 
->> \`SCROLLOCK\`
-
-*Source: https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference*`),
+\`SCROLLOCK\``),
         text: "SCROLLOCK"
     }
 ];
