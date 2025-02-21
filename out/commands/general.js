@@ -61,9 +61,9 @@ STRING The quick brown fox jumps over the lazy dog
 The \`STRINGLN\` command, like \`STRING\`, will inject a series of keystrokes then terminate with a carriage return (\`ENTER\`).
 
 \`\`\`
-STRINGLN    _    _    _    USB     _    _    _
+STRINGLN      _      _      _      USB       _      _      _
 STRINGLN   __(.)< __(.)> __(.)=   Rubber   >(.)__ <(.)__ =(.)__
-STRINGLN   \___)  \___)  \___)  Ducky!  (___/  (___/  (___/
+STRINGLN   \___)  \___)  \___)    Ducky!    (___/  (___/  (___/
 \`\`\`
 
 `),
@@ -106,9 +106,9 @@ Or in this case: \`STRING abc\`
 
 \`\`\`
 STRINGLN
-  a
-  b
-  c
+a
+b
+c
 END_STRINGLN
 \`\`\`
 
@@ -132,6 +132,43 @@ c
 
 `),
         text: "STRINGLN\n\tHello \n\tWorld!\nEND_STRINGLN"
+    }, {
+        label: "DELAY",
+        detail: "Difficult to see. Always in motion is the future...",
+        doc: new vscode.MarkdownString(`
+# DELAY
+
+The \`DELAY\` command instructs the USB Rubber Ducky to momentarily pause execution of the payload. This is useful when deploying a payload which must "wait" for an element — such as a window — to load. The \`DELAY\` command accepts the time parameter in milliseconds.
+
+\`\`\`
+DELAY for 100 milliseconds (one tenth of a second)
+DELAY 100
+\`\`\`
+
+**The minimum delay value is 20!**
+
+The \`DELAY\` command may also accept an integer variable.
+
+\`\`\`
+VAR $WAIT = 500
+DELAY $WAIT
+\`\`\`
+`),
+        text: "DELAY"
+    }, {
+        label: "INJECT_MOD",
+        detail: "Standalone Modifier Keys",
+        doc: new vscode.MarkdownString(`
+# INJECT_MOD
+
+Injecting a modifier key alone without another key — such as pressing the \`WINDOWS\` key — may be achieved by prepending the modifier key with the \`INJECT_MOD\` command.
+
+\`\`\`
+REM Example pressing Windows key alone
+INJECT_MOD WINDOWS
+\`\`\`
+`),
+        text: "INJECT_MOD"
     }
 ];
 //# sourceMappingURL=general.js.map
