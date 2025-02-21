@@ -153,6 +153,7 @@ The \`DELAY\` command may also accept an integer variable.
 VAR $WAIT = 500
 DELAY $WAIT
 \`\`\`
+
 `),
   text: "DELAY"
 },{
@@ -167,7 +168,35 @@ Injecting a modifier key alone without another key — such as pressing the \`WI
 REM Example pressing Windows key alone
 INJECT_MOD WINDOWS
 \`\`\`
+
 `),
   text: "INJECT_MOD"
+},{
+  label: "HOLDING KEYS",
+  detail: "Standalone Modifier Keys",
+  doc: new vscode.MarkdownString(`
+# HOLDING KEYS
+
+A key may be held, rather than pressed, by specifying a \`HOLD\` and \`RELEASE\` command with a \`DELAY\` in between the two. Both \`HOLD\` and \`RELEASE\` must specify a key. [Multiple simultaneous keys](https://docs.hak5.org/hak5-usb-rubber-ducky/advanced-features/holding-keys#holding-multiple-keys) may be held.
+
+\`\`\`
+HOLD a
+DELAY 2000
+RELEASE a
+
+REM May produce any mumber of "aaaaa" keys, depending on the repeat rate of
+REM the target OS. On macOS may open the accent menu.
+
+INJECT_MOD
+HOLD WINDOWS
+DELAY 4000
+RELEASE WINDOWS
+
+REM Will hold the Windows key for 4 seconds. Note the use of INJECT_MOD
+REM when using a modifier key without a key combination.
+\`\`\`
+
+`),
+  text: "HOLD ...\nDELAY 500 \nRELEASE ..."
 }
 ];
