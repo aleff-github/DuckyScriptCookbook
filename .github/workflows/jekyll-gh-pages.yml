@@ -21,59 +21,23 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
+
 jobs:
-  node-modules:
+  # Build job
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/setup-node@v4
-      - run: |
-          npm i react react-dom react-script create-react-app webpack
-      - uses: actions/upload-artifact@v4
-        name: "Upload Node Modules - v4"
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
         with:
-          name: node_modules-v4
-          path: node_modules
-      - uses: actions/upload-artifact@v3
-        name: "Upload Node Modules - v3"
-        with:
-          name: node_modules-v3
-          path: node_modules
-      - uses: actions/download-artifact@v4
-        name: "Download Node Modules - v4"
-        with:
-          name: node_modules-v4
-          path: node_modules-v4
-      - uses: actions/download-artifact@v3
-        name: "Download Node Modules - v3"
-        with:
-          name: node_modules-v3
-          path: node_modules-v3
-  big-artifact:
-    runs-on: ubuntu-latest
-    steps:
-      - run: |
-          dd if=/dev/urandom of=1gb-random bs=1M count=1000
-      - uses: actions/upload-artifact@v4
-        name: "Upload 1GB - v4"
-        with:
-          name: 1gb-v4
-          path: 1gb-random
-          compression-level: 0
-      - uses: actions/upload-artifact@v3
-        name: "Upload 1GB - v3"
-        with:
-          name: 1gb-v3
-          path: 1gb-random
-      - uses: actions/download-artifact@v4
-        name: "Download 1GB - v4"
-        with:
-          name: 1gb-v4
-          path: 1gb-v4
-      - uses: actions/download-artifact@v3
-        name: "Download 1GB - v3"
-        with:
-          name: 1gb-v3
-          path: 1gb-v3  
+          source: ./
+          destination: ./_site
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
 
   # Deployment job
   deploy:
