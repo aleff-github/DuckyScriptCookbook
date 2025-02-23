@@ -108,14 +108,6 @@ This project is licensed under the [GPLv3 License](./LICENSE). Feel free to use,
 
 A big quacking thank you to all the developers and contributors who made this project possible. You’re all ducking amazing! 🙌 Oh but wait, I'm just -- would you like to hear this thank you from you? [Contribute by reporting](https://github.com/aleff-github/DuckyScriptCookbook/issues) new recipes or snippets!
 
-### ↳ Stargazers
-
-[![Stargazers repo roster for @aleff-github/DuckyScriptCookbook](https://reporoster.com/stars/aleff-github/DuckyScriptCookbook)](https://github.com/aleff-github/DuckyScriptCookbook/stargazers)
-
-### ↳ Forkers
-
-[![Forkers repo roster for @aleff-github/DuckyScriptCookbook](https://reporoster.com/forks/aleff-github/DuckyScriptCookbook)](https://github.com/aleff-github/DuckyScriptCookbook/network/members)
-
 ### Credits
 
 - Duck PNG image: <a href="https://www.flaticon.com/free-icons/water-toy" title="water toy icons">Water toy icons created by cube29 - Flaticon</a> | Flaticon License
