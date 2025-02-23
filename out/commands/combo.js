@@ -55,61 +55,61 @@ In addition to the basic modifier key combinations, such as \`CTRL c\`, modifier
         label: "COMBO.COMMAND-CTRL",
         detail: "COMMAND CTRL modifier key combo",
         doc: new vscode.MarkdownString(`
-    # COMMAND CTRL
-    
-    In addition to the basic modifier key combinations, such as \`CTRL c\`, modifiers and keys may be combined arbitrarily.
-    
-    \`COMMAND CTRL\`
-    
-    `),
+# COMMAND CTRL
+
+In addition to the basic modifier key combinations, such as \`CTRL c\`, modifiers and keys may be combined arbitrarily.
+
+\`COMMAND CTRL\`
+
+`),
         text: "COMMAND CTRL"
     }, {
         label: "COMBO.COMMAND-CTRL-SHIFT",
         detail: "COMMAND CTRL SHIFT modifier key combo",
         doc: new vscode.MarkdownString(`
-    # COMMAND CTRL SHIFT
-    
-    In addition to the basic modifier key combinations, such as \`CTRL c\`, modifiers and keys may be combined arbitrarily.
-    
-    \`COMMAND CTRL SHIFT\`
-    
-    `),
+# COMMAND CTRL SHIFT
+
+In addition to the basic modifier key combinations, such as \`CTRL c\`, modifiers and keys may be combined arbitrarily.
+
+\`COMMAND CTRL SHIFT\`
+
+`),
         text: "COMMAND CTRL SHIFT"
     }, {
         label: "COMBO.COMMAND-OPTION",
         detail: "COMMAND OPTION modifier key combo",
         doc: new vscode.MarkdownString(`
-    # COMMAND OPTION
-    
-    In addition to the basic modifier key combinations, such as \`CTRL c\`, modifiers and keys may be combined arbitrarily.
-    
-    \`COMMAND OPTION\`
-    
-    `),
+# COMMAND OPTION
+
+In addition to the basic modifier key combinations, such as \`CTRL c\`, modifiers and keys may be combined arbitrarily.
+
+\`COMMAND OPTION\`
+
+`),
         text: "COMMAND OPTION"
     }, {
         label: "COMBO.COMMAND-OPTION-SHIFT",
         detail: "COMMAND OPTION SHIFT modifier key combo",
         doc: new vscode.MarkdownString(`
-    # COMMAND OPTION SHIFT
-    
-    In addition to the basic modifier key combinations, such as \`CTRL c\`, modifiers and keys may be combined arbitrarily.
-    
-    \`COMMAND OPTION SHIFT\`
-    
-    `),
+# COMMAND OPTION SHIFT
+
+In addition to the basic modifier key combinations, such as \`CTRL c\`, modifiers and keys may be combined arbitrarily.
+
+\`COMMAND OPTION SHIFT\`
+
+`),
         text: "COMMAND OPTION SHIFT"
     }, {
         label: "COMBO.CONTROL-ALT-DELETE",
         detail: "CONTROL ALT DELETE modifier key combo",
         doc: new vscode.MarkdownString(`
-    # CONTROL ALT DELETE
-    
-    In addition to the basic modifier key combinations, such as \`CTRL c\`, modifiers and keys may be combined arbitrarily.
-    
-    \`CONTROL ALT DELETE\`
-    
-    `),
+# CONTROL ALT DELETE
+
+In addition to the basic modifier key combinations, such as \`CTRL c\`, modifiers and keys may be combined arbitrarily.
+
+\`CONTROL ALT DELETE\`
+
+`),
         text: "CONTROL ALT DELETE"
     }
 ];

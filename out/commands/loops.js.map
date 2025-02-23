@@ -1,0 +1,1 @@
+{"version":3,"file":"loops.js","sourceRoot":"","sources":["../../src/commands/loops.ts"],"names":[],"mappings":";;;AAAA,iCAAiC;AAIpB,QAAA,cAAc,GAAkB;IAC7C;QACI,KAAK,EAAE,OAAO;QACd,MAAM,EAAE,EAAE;QACV,GAAG,EAAE,IAAI,MAAM,CAAC,cAAc,CAAC;;;;;;;;;;;;;;;;;CAiBlC,CAAC;QACE,IAAI,EAAE,0CAA0C;KACnD;CACA,CAAC"}

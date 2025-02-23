@@ -198,5 +198,25 @@ REM when using a modifier key without a key combination.
 
 `),
   text: "HOLD ...\nDELAY 500 \nRELEASE ..."
+},{
+  label: "JITTER",
+  detail: "",
+  doc: new vscode.MarkdownString(`
+# JITTER
+
+Jitter randomly varies the delay between individual key presses based on the seed.bin value.
+
+\`$_JITTER_ENABLED\` - Set TRUE to enable and FALSE to disable jitter.
+
+\`$_JITTER_MAX\` - Integer (0-65535) of maximum time in milliseconds between keystrokes. Default 20.
+
+\`\`\`
+$_JITTER_MAX = 60
+$_JITTER_ENABLED = TRUE
+STRINGLN The quick brown fox jumps over the lazy dog
+\`\`\`
+
+`),
+  text: "$_JITTER_"
 }
 ];

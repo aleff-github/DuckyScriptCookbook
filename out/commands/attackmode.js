@@ -1,12 +1,12 @@
-import * as vscode from 'vscode';
-import { CommandInfo } from './structure'
-
-
-export const ATTACKMODE_COMMANDS: CommandInfo[] = [
-{
-    label: "",
-    detail: "List of all attack mode commands",
-    doc: new vscode.MarkdownString(`
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ATTACKMODE_COMMANDS = void 0;
+const vscode = require("vscode");
+exports.ATTACKMODE_COMMANDS = [
+    {
+        label: "",
+        detail: "List of all attack mode commands",
+        doc: new vscode.MarkdownString(`
 # ATTACKMODE
 
 An attack mode is the device type that a USB Rubber Ducky, is functioning as or emulating. If no \`ATTACKMODE\` command is specified as the first command (excluding \`REM\`), the \`HID\` attack mode will execute, allowing the device to function as a keyboard. The \`ATTACKMODE\` command may be run multiple times within a payload, which may cause the device to be re-enumerated by the target if the attack mode changes.
@@ -51,21 +51,21 @@ REM  - Serial: 1337
 \`\`\`
 
 `),
-    text: "ATTACKMODE "
-},{
-    label: "ATTACKMODE.SAVE_ATTACKMODE",
-    detail: "",
-    doc: new vscode.MarkdownString(`
+        text: "ATTACKMODE "
+    }, {
+        label: "ATTACKMODE.SAVE_ATTACKMODE",
+        detail: "",
+        doc: new vscode.MarkdownString(`
 # SAVE_ATTACKMODE
 
 The \`SAVE_ATTACKMODE\` command will save the currently running \`ATTACKMODE\` state (including any specified \`VID\`, \`PID\`, \`MAN\`, \`PROD\` and \`SERIAL\` parameters) such that it may be later restored.
 
 `),
-    text: "SAVE_ATTACKMODE"
-},{
-    label: "ATTACKMODE.RESTORE_ATTACKMODE",
-    detail: "",
-    doc: new vscode.MarkdownString(`
+        text: "SAVE_ATTACKMODE"
+    }, {
+        label: "ATTACKMODE.RESTORE_ATTACKMODE",
+        detail: "",
+        doc: new vscode.MarkdownString(`
 # RESTORE_ATTACKMODE
 
 The \`RESTORE_ATTACKMODE\` command will restore a previously saved \`ATTACKMODE\` state.
@@ -82,6 +82,7 @@ DELAY 2000
 STRING , World!
 \`\`\`
 `),
-    text: "RESTORE_ATTACKMODE"
-}
+        text: "RESTORE_ATTACKMODE"
+    }
 ];
+//# sourceMappingURL=attackmode.js.map

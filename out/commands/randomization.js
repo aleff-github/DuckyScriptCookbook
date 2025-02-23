@@ -1,12 +1,12 @@
-import * as vscode from 'vscode';
-import { CommandInfo } from './structure'
-
-
-export const RANDOM_COMMANDS: CommandInfo[] = [
-{
-    label: "RANDOM-COMMANDS",
-    detail: "",
-    doc: new vscode.MarkdownString(`
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.RANDOM_COMMANDS = void 0;
+const vscode = require("vscode");
+exports.RANDOM_COMMANDS = [
+    {
+        label: "RANDOM-COMMANDS",
+        detail: "",
+        doc: new vscode.MarkdownString(`
 # RANDOM COMMANDS
 
 The pseudorandom number generator provides randomization for keystroke injection, variables and attackmode parameters. The first time a randomization feature is used, a \`seed.bin\` will be generated on the root of the MicroSD card. One may also be generated from the [Hak5 IDE](https://encoder.hak5.org/).
@@ -18,11 +18,11 @@ The pseudorandom number generator provides randomization for keystroke injection
 \`RANDOM and ATTACKMODE\`
 
 `),
-    text: ""
-},{
-    label: "RANDOM-COMMANDS.KEYSTROKE-INJECTION",
-    detail: "",
-    doc: new vscode.MarkdownString(`
+        text: ""
+    }, {
+        label: "RANDOM-COMMANDS.KEYSTROKE-INJECTION",
+        detail: "",
+        doc: new vscode.MarkdownString(`
 # RANDOM KEYSTROKE INJECTION
 
 \`RANDOM_LOWERCASE_LETTER\` - *abcdefghijklmnopqrstuvwxyz*
@@ -47,11 +47,11 @@ END_WHILE
 \`\`\`
 
 `),
-    text: ""
-},{
-    label: "RANDOM-COMMANDS.INTEGERS",
-    detail: "",
-    doc: new vscode.MarkdownString(`
+        text: ""
+    }, {
+        label: "RANDOM-COMMANDS.INTEGERS",
+        detail: "",
+        doc: new vscode.MarkdownString(`
 # RANDOM INTEGERS
 
 The internal variable \`$_RANDOM_INT\` assigns a random integer between the specified \`$_RANDOM_MIN\` and \`$_RANDOM_MAX\` values. May be 0-65535. The default values are \`0-9\`.
@@ -65,11 +65,11 @@ REM The variable $FOO will be between 42 and 1337
 \`\`\`
 
 `),
-    text: "$_RANDOM_INT"
-},{
-    label: "RANDOM-COMMANDS.RANDOM-AND-ATTACKMODE",
-    detail: "",
-    doc: new vscode.MarkdownString(`
+        text: "$_RANDOM_INT"
+    }, {
+        label: "RANDOM-COMMANDS.RANDOM-AND-ATTACKMODE",
+        detail: "",
+        doc: new vscode.MarkdownString(`
 # RANDOM AND ATTACKMODE
 
 The \`ATTACKMODE\` command may accept random values for the optional parameters.
@@ -91,6 +91,7 @@ ATTACKMODE HID VID_RANDOM PID_RANDOM MAN_RANDOM PROD_RANDOM SERIAL_RANDOM
 **Use caution when using random \`VID\` and \`PID\` values as unexpected results are likely.**
 
 `),
-    text: ""
-}
+        text: ""
+    }
 ];
+//# sourceMappingURL=randomization.js.map

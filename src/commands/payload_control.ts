@@ -2,7 +2,7 @@ import * as vscode from 'vscode';
 import { CommandInfo } from './structure'
 
 
-export const CONDITIONAL_STATEMENTS_COMMANDS: CommandInfo[] = [
+export const PAYLOAD_CONTROL_COMMANDS: CommandInfo[] = [
 {
     label: "PAYLOAD-CONTROL-COMMANDS",
     detail: "",

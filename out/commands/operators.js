@@ -1,12 +1,12 @@
-import * as vscode from 'vscode';
-import { CommandInfo } from './structure'
-
-
-export const OPERATORS_COMMANDS: CommandInfo[] = [
-{
-    label: "OPERATORS.MATH",
-    detail: "",
-    doc: new vscode.MarkdownString(`
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.OPERATORS_COMMANDS = void 0;
+const vscode = require("vscode");
+exports.OPERATORS_COMMANDS = [
+    {
+        label: "OPERATORS.MATH",
+        detail: "",
+        doc: new vscode.MarkdownString(`
 # Math
 
 Operators instruct the payload to perform a given mathematical, relational or logical operation.
@@ -32,11 +32,11 @@ REM $FOO was assigned 1337, subtracted 1295, and ended up equalling 42.
 \`\`\`
 
 `),
-    text: ""
-},{
-    label: "OPERATORS.COMPARISON",
-    detail: "",
-    doc: new vscode.MarkdownString(`
+        text: ""
+    }, {
+        label: "OPERATORS.COMPARISON",
+        detail: "",
+        doc: new vscode.MarkdownString(`
 # Comparison
 
 Will compare two values to evaluate a single boolean value.
@@ -62,11 +62,11 @@ END_IF
 \`\`\`
 
 `),
-    text: ""
-},{
-    label: "OPERATORS.ORDER-OF-OPERATIONS",
-    detail: "",
-    doc: new vscode.MarkdownString(`
+        text: ""
+    }, {
+        label: "OPERATORS.ORDER-OF-OPERATIONS",
+        detail: "",
+        doc: new vscode.MarkdownString(`
 # Order of Operations
 
 Parentheses \`( )\` are required to define the precedence conventions.
@@ -77,11 +77,11 @@ VAR $BAR = (( 100 * 13 ) + ( $FOO - 5 ))
 \`\`\`
 
 `),
-    text: ""
-},{
-    label: "OPERATORS.LOGICAL-OPERATORS",
-    detail: "",
-    doc: new vscode.MarkdownString(`
+        text: ""
+    }, {
+        label: "OPERATORS.LOGICAL-OPERATORS",
+        detail: "",
+        doc: new vscode.MarkdownString(`
 # Logical Operators
 
 Logical operators may be used to connect two or more expressions.
@@ -100,11 +100,11 @@ END_IF
 \`\`\`
 
 `),
-    text: ""
-},{
-    label: "OPERATORS.BITWISE-OPERATORS",
-    detail: "",
-    doc: new vscode.MarkdownString(`
+        text: ""
+    }, {
+        label: "OPERATORS.BITWISE-OPERATORS",
+        detail: "",
+        doc: new vscode.MarkdownString(`
 # Bitwise Operators
 
 Operate on the uint16 values at the binary level.
@@ -126,6 +126,7 @@ REM $FOO will now equal 0xAC05
 \`\`\`
 
 `),
-    text: ""
-}
+        text: ""
+    }
 ];
+//# sourceMappingURL=operators.js.map
