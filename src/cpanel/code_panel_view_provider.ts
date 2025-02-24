@@ -94,6 +94,18 @@ export class CodePanelViewProvider implements vscode.WebviewViewProvider {
 						editBuilder.replace(selection, code.duckyscript(this._extension.asAbsolutePath(PATH_TO_COOKBOOK.GENERALIZED_WINDOWS_USER_PATH_3_0)));
 					});
 					break;
+				case 'PHYSICAL_EXFILTRATION_3_0':
+					active.edit(editBuilder => {
+						const code = new cpanel.Code(this._extension.extensionUri);
+						editBuilder.replace(selection, code.duckyscript(this._extension.asAbsolutePath(PATH_TO_COOKBOOK.PHYSICAL_EXFILTRATION_3_0)));
+					});
+					break;
+				case 'NETWORK_EXFILTRATION_3_0':
+					active.edit(editBuilder => {
+						const code = new cpanel.Code(this._extension.extensionUri);
+						editBuilder.replace(selection, code.duckyscript(this._extension.asAbsolutePath(PATH_TO_COOKBOOK.NETWORK_EXFILTRATION_3_0)));
+					});
+					break;
 
 				// DuckyScript 1.0 Payloads
 				case 'PAYLOAD_INTRO_1_0':
@@ -236,6 +248,12 @@ function getCodePanelBody() {
 				</a>
 				<a href="#" class="btn" role="button" data-act="GENERALIZED_WINDOWS_USER_PATH_3_0">
 					<li><span>Generalized Windows User Path</span></li>
+				</a>
+				<a href="#" class="btn" role="button" data-act="NETWORK_EXFILTRATION_3_0">
+					<li><span>Network Exfiltration</span></li>
+				</a>
+				<a href="#" class="btn" role="button" data-act="PHYSICAL_EXFILTRATION_3_0">
+					<li><span>Physical Exfiltration</span></li>
 				</a>
 				<a href="#" class="btn" role="button" data-act="OPEN_SHELL">
 					<li><span>Open A Shell</span></li>

