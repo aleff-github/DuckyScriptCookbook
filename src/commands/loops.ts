@@ -19,7 +19,7 @@ WHILE ( $FOO > 0 )
 END_WHILE
 
 WHILE TRUE
-    SRINGLN This is an infinite loop. This message repeats forever.
+    STRINGLN This is an infinite loop. This message repeats forever.
 END_WHILE
 \`\`\`
 

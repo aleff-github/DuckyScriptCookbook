@@ -106,9 +106,9 @@ Or in this case: \`STRING abc\`
 
 \`\`\`
 STRINGLN
-a
-b
-c
+  a
+  b
+  c
 END_STRINGLN
 \`\`\`
 

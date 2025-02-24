@@ -13,7 +13,7 @@ export const INTERNAL_VARIABLES_COMMANDS: CommandInfo[] = [
 
 \`$_BUTTON_ENABLED\` - *Returns \`TRUE\` if the button is enabled or \`FALSE\` if the button is disabled.
 
-\`$_BUTTON_USER_DEFINED\` - *Returns \`TRUE\` if a BUTTON_DEF has been implemented in the payload or \`FALSE\` if it hasn't been implemented.*
+\`$_BUTTON_USER_DEFINED\` - *Returns \`TRUE\` if a \`BUTTON_DEF\` has been implemented in the payload or \`FALSE\` if it hasn't been implemented.*
 
 \`$_BUTTON_PUSH_RECEIVED\` - *Returns \`TRUE\` if the button has ever been pressed. May be retrieved or set.*
 
@@ -21,21 +21,21 @@ export const INTERNAL_VARIABLES_COMMANDS: CommandInfo[] = [
 
 ## LED
 
-\`$_SYSTEM_LEDS_ENABLED\` - *Default set \`TRUE\`. May be retrieved or set. Boot and ATTACKMODE change LED.*
+\`$_SYSTEM_LEDS_ENABLED\` - *Default set \`TRUE\`. May be retrieved or set. Boot and \`ATTACKMODE\` change LED.*
 
-\`$_STORAGE_LEDS_ENABLED\` - *Default set \`TRUE\`. May be retrieved or set.\nBlinks the LED red/green on storage read/write in ATTACKMODE STORAGE.*
+\`$_STORAGE_LEDS_ENABLED\` - *Default set \`TRUE\`. May be retrieved or set.\nBlinks the LED red/green on storage read/write in \`ATTACKMODE STORAGE\`.*
 
-\`$_LED_CONTINUOUS_SHOW_STORAGE_ACTIVITY\` - *Default set \`TRUE\`. May be retrieved or set.\nThe LED will light solid green when the storage has been inactive for longer than $_STORAGE_ACTIVITY_TIMEOUT (default 1000 ms). Otherwise, the LED will light red when active.*
+\`$_LED_CONTINUOUS_SHOW_STORAGE_ACTIVITY\` - *Default set \`TRUE\`. May be retrieved or set.\nThe LED will light solid green when the storage has been inactive for longer than \`$_STORAGE_ACTIVITY_TIMEOUT\` (default 1000 ms). Otherwise, the LED will light red when active.*
 
 \`$_INJECTING_LEDS_ENABLED\` - *Default set \`TRUE\`. May be retrieved or set. When \`TRUE\` the LED will blink green on payload execution.*
 
 \`$_EXFIL_LEDS_ENABLED\` - *Default set \`TRUE\`. May be retrieved or set. When \`TRUE\` the LED will blink green during Keystroke Reflection.*
 
-\`$_LED_SHOW_CAPS\` - *Default set \`FALSE\`. May be retrieved or set. When \`TRUE\` will bind the GREEN LED state to the CAPSLOCK state.*
+\`$_LED_SHOW_CAPS\` - *Default set \`FALSE\`. May be retrieved or set. When \`TRUE\` will bind the GREEN LED state to the \`CAPSLOCK\` state.*
 
-\`$_LED_SHOW_NUM\` - *Default set \`FALSE\`. May be retrieved or set. When \`TRUE\` will bind the RED LED state to the NUMLOCK state.*
+\`$_LED_SHOW_NUM\` - *Default set \`FALSE\`. May be retrieved or set. When \`TRUE\` will bind the RED LED state to the \`NUMLOCK\` state.*
 
-\`$_LED_SHOW_SCROLL\` - *Default set \`FALSE\`. May be retrieved or set. When \`TRUE\` will bind the GREEN LED state to the SCROLLLOCK state.*
+\`$_LED_SHOW_SCROLL\` - *Default set \`FALSE\`. May be retrieved or set. When \`TRUE\` will bind the GREEN LED state to the \`SCROLLOCK\` state.*
 
 ## ATTACKMODE
 
@@ -43,29 +43,29 @@ export const INTERNAL_VARIABLES_COMMANDS: CommandInfo[] = [
 
 \`$_CURRENT_PID\` - *Returns the currently operating Product ID with endian swapped. May only be retrieved. Cannot be set.*
 
-\`$_CURRENT_ATTACKMODE\` - *Returns the currently operating ATTACKMODE represented as 0 for OFF, 1 for HID, 2 for STORAGE and 3 for both HID and STORAGE.|
+\`$_CURRENT_ATTACKMODE\` - *Returns the currently operating \`ATTACKMODE\` represented as \`0\` for \`OFF\`, \`1\` for \`HID\`, \`2\` for \`STORAGE\` and 3 for both \`HID\` and \`STORAGE\`.
 
 ## RANDOM
 
 \`$_RANDOM_INT\` - *Random integer within set range.*
 
-\`$_RANDOM_MIN\` - *Random integer minimum range (unsigned, 0-65535).|
+\`$_RANDOM_MIN\` - *Random integer minimum range (unsigned, 0-65535).*
 
-\`$_RANDOM_MAX\` - *Random integer maximum range (unsigned, 0-65535).|
+\`$_RANDOM_MAX\` - *Random integer maximum range (unsigned, 0-65535).*
 
-\`$_RANDOM_SEED\` - *Random seed from seed.bin|
+\`$_RANDOM_SEED\` - *Random seed from seed.bin*
 
-\`$_RANDOM_LOWER_LETTER_KEYCODE\` - *Returns random lower letter scancode (a-z)|
+\`$_RANDOM_LOWER_LETTER_KEYCODE\` - *Returns random lower letter scancode (a-z)*
 
-\`$_RANDOM_UPPER_LETTER_KEYCODE\` - *Returns random upper letter scancode (A-Z)|
+\`$_RANDOM_UPPER_LETTER_KEYCODE\` - *Returns random upper letter scancode (A-Z)*
 
-\`$_RANDOM_LETTER_KEYCODE\` - *Returns random letter scancode (a-zA-Z)|
+\`$_RANDOM_LETTER_KEYCODE\` - *Returns random letter scancode (a-zA-Z)*
 
-\`$_RANDOM_NUMBER_KEYCODE\` - *Returns random number scancode (0-9)|
+\`$_RANDOM_NUMBER_KEYCODE\` - *Returns random number scancode (0-9)*
 
-\`$_RANDOM_SPECIAL_KEYCODE\` - *Returns random special char scancode (shift+0-9)|
+\`$_RANDOM_SPECIAL_KEYCODE\` - *Returns random special char scancode (shift+0-9)*
 
-\`$_RANDOM_CHAR_KEYCODE\` - *Returns random letter number or special scancode|
+\`$_RANDOM_CHAR_KEYCODE\` - *Returns random letter number or special scancode*
 
 ## JITTER
 
@@ -81,11 +81,11 @@ export const INTERNAL_VARIABLES_COMMANDS: CommandInfo[] = [
 
 \`$_SCROLLLOCK_ON\` - *\`TRUE\` if on, \`FALSE\` if off.*
 
-\`$_SAVED_CAPSLOCK_ON\` - *On USB attach or SAVE_HOST_KEYBOARD_LOCK_STATE, sets \`TRUE\` or \`FALSE\` depending on the reported OS condition.*
+\`$_SAVED_CAPSLOCK_ON\` - *On USB attach or \`SAVE_HOST_KEYBOARD_LOCK_STATE\`, sets \`TRUE\` or \`FALSE\` depending on the reported OS condition.*
 
-\`$_SAVED_NUMLOCK_ON\` - *On USB attach or SAVE_HOST_KEYBOARD_LOCK_STATE, sets \`TRUE\` or \`FALSE\` depending on the reported OS condition.*
+\`$_SAVED_NUMLOCK_ON\` - *On USB attach or \`SAVE_HOST_KEYBOARD_LOCK_STATE\`, sets \`TRUE\` or \`FALSE\` depending on the reported OS condition.*
 
-\`$_SAVED_SCROLLLOCK_ON\` - *On USB attach or SAVE_HOST_KEYBOARD_LOCK_STATE, sets \`TRUE\` or \`FALSE\` depending on the reported OS condition.*
+\`$_SAVED_SCROLLLOCK_ON\` - *On USB attach or \`SAVE_HOST_KEYBOARD_LOCK_STATE\`, sets \`TRUE\` or \`FALSE\` depending on the reported OS condition.*
 
 \`$_RECEIVED_HOST_LOCK_LED_REPLY\` - *On receipt of any lock state LED control code, sets \`TRUE\`. This flag is helpful for fingerprinting certain operating systems (e.g. macOS) or systems which do not reflect lock keys.*
 
@@ -95,13 +95,13 @@ export const INTERNAL_VARIABLES_COMMANDS: CommandInfo[] = [
 
 ## EXFILTRATION
 
-\`$_EXFIL_MODE_ENABLED\` - *Default \`FALSE\`. Set \`TRUE\` to enable Keystroke Reflection. Will listen for CAPSLOCK and NUMLOCK changes, writing binary values to loot.bin. num=1, caps=0.*
+\`$_EXFIL_MODE_ENABLED\` - *Default \`FALSE\`. Set \`TRUE\` to enable Keystroke Reflection. Will listen for \`CAPSLOCK\` and \`NUMLOCK\` changes, writing binary values to loot.bin. num=1, caps=0.*
 
 ## OS_DETECT
 
-\`$_HOST_CONFIGURATION_REQUEST_COUNT\` - *Used by OS_DETECT EXTENSION to detect device enumeration count.*
+\`$_HOST_CONFIGURATION_REQUEST_COUNT\` - *Used by \`OS_DETECT\` EXTENSION to detect device enumeration count.*
 
-\`$_OS\` - *Used by OS_DETECT EXTENSION to return value of fingerprinted operating system. May return WINDOWS, MACOS, LINUX, CHROMEOS, ANDROID, IOS. These names are reserved and should not be used in user variables.*
+\`$_OS\` - *Used by \`OS_DETECT\` EXTENSION to return value of fingerprinted operating system. May return \`WINDOWS\`, \`MACOS\`, \`LINUX\`, \`CHROMEOS\`, \`ANDROID\`, \`IOS\`. These names are reserved and should not be used in user variables.*
 
 `),
     text: ""

@@ -39,7 +39,7 @@ STRING World!
 A function may return a integer or boolean value which may also be evaluated.
 
 \`\`\`
-FUNCITON TEST_CAPS_AND_NUM()
+FUNCTION TEST_CAPS_AND_NUM()
     IF (($_CAPSLOCK_ON == TRUE) && ($_NUMLOCK_ON == TRUE)) THEN
         RETURN TRUE
     ELSE
