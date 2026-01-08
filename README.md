@@ -4,7 +4,7 @@ Welcome to the **DuckyScript Cookbook** - your quacktastic assistant for whippin
 
 ## Available On
 
- 🌟 <a href="https://open-vsx.org/extension/Aleff/duckyscriptcookbook"> <img src="https://github.com/VSCodium/vscodium.github.io/blob/master/img/apple-touch-icon.png?raw=true" width="60" alt="VSCodium logo" style="vertical-align: middle; margin-right: 8px;"/> **VSCodium** </a> 🌟 <a href="https://marketplace.visualstudio.com/items?itemName=Aleff.duckyscriptcookbook"> <img src="https://code.visualstudio.com/assets/images/code-stable.png" width="60" alt="VSCode logo" style="vertical-align: middle; margin-right: 8px;"/> **VSCode** </a> 🌟 
+<a href="https://open-vsx.org/extension/Aleff/duckyscriptcookbook"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/VSCodium_Logo.png/960px-VSCodium_Logo.png?20200326145922" width="60" alt="VSCodium logo" style="vertical-align: middle; margin-right: 8px;"/></a> <a href="https://marketplace.visualstudio.com/items?itemName=Aleff.duckyscriptcookbook"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/960px-Visual_Studio_Code_1.35_icon.svg.png" width="60" alt="VSCode logo" style="vertical-align: middle; margin-right: 8px;"/></a>
 
 _This is not an official extension of Hak5 or Flipper Zero but was developed by a third party._
 
