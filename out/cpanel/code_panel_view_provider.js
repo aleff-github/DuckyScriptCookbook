@@ -246,7 +246,6 @@ function getRecipeMarkup(items) {
 		<li class="recipe-list-item">
 			<button class="recipe-action" type="button" data-act="${item.action}" title="Insert ${item.label}">
 				<span class="recipe-label">${item.label}</span>
-				<span class="recipe-meta">Insert</span>
 			</button>
 		</li>`).join('');
 }
