@@ -14,6 +14,7 @@ import { LED_COMMANDS } from './commands/led';
 import { LOCK_COMMANDS } from './commands/lock';
 import { LOOPS_COMMANDS } from './commands/loops';
 import { OPERATORS_COMMANDS } from './commands/operators';
+import { PAGER_COMMANDS } from './commands/pager';
 import { PAYLOAD_CONTROL_COMMANDS } from './commands/payload_control';
 import { PAYLOAD_HIDING } from './commands/payload_hiding';
 import { RANDOM_COMMANDS } from './commands/randomization';
@@ -37,6 +38,7 @@ const commandGroups = [
     LOCK_COMMANDS,
     LOOPS_COMMANDS,
     OPERATORS_COMMANDS,
+    PAGER_COMMANDS,
     PAYLOAD_CONTROL_COMMANDS,
     PAYLOAD_HIDING,
     RANDOM_COMMANDS,

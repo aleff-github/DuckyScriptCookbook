@@ -1889,6 +1889,15 @@
           "foreground": "#56B6C2"
         }
       },
+      
+      {
+        "name": "DuckyScript Pager Commands",
+        "scope": "support.function.builtin.pager.duckyscript",
+        "settings": {
+          "fontStyle": "bold",
+          "foreground": "#56B6C2"
+        }
+      },
       {
         "name": "DuckyScript Function Calls",
         "scope": "entity.name.function.call.duckyscript",

@@ -1907,6 +1907,14 @@
 			}
 		},
 		{
+			"name": "DuckyScript Pager Commands",
+			"scope": "support.function.builtin.pager.duckyscript",
+			"settings": {
+				"fontStyle": "bold",
+				"foreground": "#2C7DA0"
+			}
+		},
+		{
 			"name": "DuckyScript Function Calls",
 			"scope": "entity.name.function.call.duckyscript",
 			"settings": {

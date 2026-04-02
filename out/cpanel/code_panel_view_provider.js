@@ -272,7 +272,7 @@ function getCodePanelBody() {
 			<header class="hero-card">
 				<div class="hero-copy">
 					<div class="eyebrow">DuckyScript Cookbook</div>
-					<h1>Payload recipes that follow your editor theme</h1>
+					<h1>List of Recurring Code</h1>
 					<p>Select text in the active editor and click a recipe to replace it with a ready-to-use payload template.</p>
 				</div>
 			</header>

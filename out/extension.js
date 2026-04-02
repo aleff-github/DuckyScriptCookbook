@@ -17,6 +17,7 @@ const led_1 = require("./commands/led");
 const lock_1 = require("./commands/lock");
 const loops_1 = require("./commands/loops");
 const operators_1 = require("./commands/operators");
+const pager_1 = require("./commands/pager");
 const payload_control_1 = require("./commands/payload_control");
 const payload_hiding_1 = require("./commands/payload_hiding");
 const randomization_1 = require("./commands/randomization");
@@ -37,6 +38,7 @@ const commandGroups = [
     lock_1.LOCK_COMMANDS,
     loops_1.LOOPS_COMMANDS,
     operators_1.OPERATORS_COMMANDS,
+    pager_1.PAGER_COMMANDS,
     payload_control_1.PAYLOAD_CONTROL_COMMANDS,
     payload_hiding_1.PAYLOAD_HIDING,
     randomization_1.RANDOM_COMMANDS,
