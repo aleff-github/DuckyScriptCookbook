@@ -27,7 +27,7 @@ Now while you are writing you just need to press the CTRL SPACE combination to g
 
 ### Syntax Highlighting Dark && Light
 
-To properly enable Syntax Highlighting you need to enable the Dark or Light theme of DuckyScript. To do this you can click F1, type “theme” and select the theme you like best.
+Syntax highlighting now works with standard VS Code and VSCodium themes too. The bundled Dark and Light DuckyScript themes are optional and give you a more tailored color palette if you want the full cookbook look.
 
 ![](https://github.com/aleff-github/Deposito/blob/main/DuckyScriptCookbook/syntax-highlighting.gif?raw=true)
 

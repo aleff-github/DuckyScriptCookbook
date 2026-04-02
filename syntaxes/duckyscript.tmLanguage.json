@@ -6,78 +6,151 @@
 			"include": "#comments"
 		},
 		{
-			"include": "#keywords"
+			"include": "#stringCommands"
 		},
 		{
-			"include": "#code_blocks"
+			"include": "#delayCommands"
 		},
 		{
-			"include": "#usb_army_knife"
+			"include": "#declarations"
+		},
+		{
+			"include": "#controlKeywords"
+		},
+		{
+			"include": "#variables"
+		},
+		{
+			"include": "#constants"
+		},
+		{
+			"include": "#functionCalls"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#usbArmyKnife"
+		},
+		{
+			"include": "#commands"
 		}
 	],
 	"repository": {
 		"comments": {
 			"patterns": [
 				{
-					"name": "comments.inline.duckyscript",
-					"match": "^\\s*\\t*REM\\s+.*$"
+					"name": "comment.line.rem.duckyscript",
+					"match": "^\\s*REM\\b.*$"
 				},
 				{
-					"begin": "^\\s*\\t*REM_BLOCK(?:\\s.*)?$",
-					"end": "^.*END_REM",
-					"name": "comments.block.duckyscript"
+					"begin": "^\\s*REM_BLOCK(?:\\s.*)?$",
+					"end": "^\\s*END_REM\\b.*$",
+					"name": "comment.block.rem.duckyscript"
 				}
 			]
 		},
-		"keywords": {
+		"stringCommands": {
 			"patterns": [
 				{
-					"name": "keywords.declaration.duckyscript",
-					"match": "(#|\\$)([A-Za-z0-9_-]+)"
-				},
-				{
-					"name": "keywords.operator.duckyscript",
-					"match": "(=|\\+|-|\\*|/|%|\\^|&|!=|<|>|\\|)"
-				},
-				{
-					"name": "keywords.statement.duckyscript",
-					"match": "(?<=\\s|\\t|^)(EXTENSION|END_EXTENSION|BUTTON_DEF|END_BUTTON|DEFINE|VAR|IF|ELSE|THEN|END_IF|IF_DEFINED_TRUE|END_IF_DEFINED|WHILE|END_WHILE|FUNCTION|END_FUNCTION|[A-Za-z0-9]+\\(.*\\))(?=\\s|\\t|$)"
-				},
-				{
-					"name": "keywords.truecondition.duckyscript",
-					"match": "(TRUE|FALSE)"
-				},
-				{
-					"name": "keywords.command.duckyscript",
-					"match": "(?<=\\s|\\t|^)(STRING|STRING_POWERSHELL|STRING_BATCH|STRING_BASH|STRING_JAVASCRIPT|STRING_PYTHON|STRING_RUBY|STRING_HTML|END_STRING|STRINGLN|STRINGLN_POWERSHELL|STRINGLN_BATCH|STRINGLN_BASH|STRINGLN_JAVASCRIPT|STRINGLN_PYTHON|STRINGLN_RUBY|STRINGLN_HTML|END_STRINGLN|DEFAULTDELAY|DEFAULT_DELAY|DELAY|ATTACKMODE|ENTER|ESCAPE|SHIFT|ALT|CTRL|GUI|DOWNARROW|DOWN|UPARROW|UP|LEFTARROW|LEFT|RIGHTARROW|RIGHT|TAB|CAPSLOCK|DELETE|DEL|END|ESC|HOME|INSERT|PAGEUP|PAGEDOWN|PRINTSCREEN|SPACE|BACKSPACE|BREAK|PAUSE|MENU|APP|F1|F2|F3|F4|F5|F6|F7|F8|F9|F10|F11|F12|NUMLOCK|SCROLLLOCK|WINDOWS|CONTROL|COMMAND|OPTION|INJECT_MOD|WAIT_FOR_BUTTON_PRESS|LED_OFF|LED_R|LED_G|HID|STORAGE|OFF|ATTACKMODE|RANDOM_LOWERCASE_LETTER|RANDOM_UPPERCASE_LETTER|RANDOM_LETTER|RANDOM_NUMBER|RANDOM_SPECIAL|RANDOM_CHAR|VID_RANDOM|PID_RANDOM|MAN_RANDOM|PROD_RANDOM|SERIAL_RANDOM|HOLD|RESET|RESTART_PAYLOAD|STOP_PAYLOAD|HIDE_PAYLOAD|RESTORE_PAYLOAD|WAIT_FOR_CAPS_ON|WAIT_FOR_CAPS_OFF|WAIT_FOR_CAPS_CHANGE|WAIT_FOR_NUM_ON|WAIT_FOR_NUM_OFF|WAIT_FOR_NUM_CHANGE|WAIT_FOR_SCROLL_ON|WAIT_FOR_SCROLL_OFF|WAIT_FOR_SCROLL_CHANGE|SAVE_HOST_KEYBOARD_LOCK_STATE|RESTORE_HOST_KEYBOARD_LOCK_STATE|EXFIL|RESTORE_ATTACKMODE|SAVE_ATTACKMODE|RELEASE|SCROLLOCK|RETURN)(?=\\s|\\t|$)"
+					"name": "meta.string.command.duckyscript",
+					"match": "^\\s*(STRING(?:LN)?(?:_POWERSHELL|_BATCH|_BASH|_JAVASCRIPT|_PYTHON|_RUBY|_HTML)?|END_STRING|END_STRINGLN)\\b(\\s+)(.+)$",
+					"captures": {
+						"1": {
+							"name": "support.function.builtin.duckyscript"
+						},
+						"3": {
+							"name": "string.unquoted.command.duckyscript"
+						}
+					}
 				}
 			]
 		},
-		"usb_army_knife": {
+		"delayCommands": {
 			"patterns": [
 				{
-					"name": "usb_army_knife.userinterface.duckyscript",
-					"match": "(?<=\\s|\\t|^)(TFT_OFF|TFT_ON|DISPLAY_PNG|DISPLAY_TEXT|DISPLAY_CLEAR|LED|LED_B)(?=\\s|\\t|$)"
+					"name": "meta.delay.command.duckyscript",
+					"match": "^\\s*(DEFAULTDELAY|DEFAULT_DELAY|DELAY)\\b(\\s+)(-?\\d+)\\b",
+					"captures": {
+						"1": {
+							"name": "support.function.builtin.duckyscript"
+						},
+						"3": {
+							"name": "constant.numeric.duckyscript"
+						}
+					}
+				}
+			]
+		},
+		"declarations": {
+			"patterns": [
+				{
+					"name": "storage.type.duckyscript",
+					"match": "\\b(?:EXTENSION|BUTTON_DEF|DEFINE|VAR|FUNCTION)\\b"
 				},
 				{
-					"name": "usb_army_knife.hardware.duckyscript",
-					"match": "(?<=\\s|\\t|^)(WEB_OFF|WEB_ON|WIFI_OFF|WIFI_ON|SERIAL|BUTTON_LONG_PRESS|BUTTON_SHORT_PRESS)(?=\\s|\\t|$)"
+					"name": "storage.modifier.duckyscript",
+					"match": "\\b(?:END_EXTENSION|END_BUTTON|END_FUNCTION)\\b"
+				}
+			]
+		},
+		"controlKeywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.conditional.duckyscript",
+					"match": "\\b(?:IF|ELSE|THEN|END_IF|IF_DEFINED_TRUE|END_IF_DEFINED)\\b"
 				},
 				{
-					"name": "usb_army_knife.usbfunctionality.duckyscript",
-					"match": "(?<=\\s|\\t|^)(USB_MOUNT_DISK_READ_ONLY|USB_NCM_PCAP_ON|USB_NCM_PCAP_OFF|WAIT_FOR_USB_STORAGE_ACTIVITY|WAIT_FOR_USB_STORAGE_ACTIVITY_TO_STOP|RAW_HID)(?=\\s|\\t|$)"
-				},
+					"name": "keyword.control.loop.duckyscript",
+					"match": "\\b(?:WHILE|END_WHILE)\\b"
+				}
+			]
+		},
+		"variables": {
+			"patterns": [
 				{
-					"name": "usb_army_knife.hostagent.duckyscript",
-					"match": "(?<=\\s|\\t|^)(AGENT_RUN|WAIT_FOR_AGENT_RUN_RESULT|AGENT_CONNECTED)(?=\\s|\\t|$)"
-				},
+					"name": "variable.other.definition.duckyscript",
+					"match": "(?:#|\\$)[A-Za-z_][A-Za-z0-9_-]*"
+				}
+			]
+		},
+		"constants": {
+			"patterns": [
 				{
-					"name": "usb_army_knife.filehandling.duckyscript",
-					"match": "(?<=\\s|\\t|^)(FILE_EXISTS|CREATE_FILE|DELETE_FILE|LOAD_FILES_FROM_SD|FILE_INDEX_VALID)(?=\\s|\\t|$)"
-				},
+					"name": "constant.language.boolean.duckyscript",
+					"match": "\\b(?:TRUE|FALSE)\\b"
+				}
+			]
+		},
+		"functionCalls": {
+			"patterns": [
 				{
-					"name": "usb_army_knife.other.duckyscript",
-					"match": "(?<=\\s|\\t|^)(CALC|ESP32M|RUN_PAYLOAD|KEYBOARD_LAYOUT)(?=\\s|\\t|$)"
+					"name": "entity.name.function.call.duckyscript",
+					"match": "\\b[A-Za-z_][A-Za-z0-9_]*(?=\\()"
+				}
+			]
+		},
+		"operators": {
+			"patterns": [
+				{
+					"name": "keyword.operator.duckyscript",
+					"match": "!=|==|<=|>=|=|\\+|-|\\*|/|%|\\^|&|<|>|\\|"
+				}
+			]
+		},
+		"commands": {
+			"patterns": [
+				{
+					"name": "support.function.builtin.duckyscript",
+					"match": "\\b(?:STRING|STRING_POWERSHELL|STRING_BATCH|STRING_BASH|STRING_JAVASCRIPT|STRING_PYTHON|STRING_RUBY|STRING_HTML|END_STRING|STRINGLN|STRINGLN_POWERSHELL|STRINGLN_BATCH|STRINGLN_BASH|STRINGLN_JAVASCRIPT|STRINGLN_PYTHON|STRINGLN_RUBY|STRINGLN_HTML|END_STRINGLN|DEFAULTDELAY|DEFAULT_DELAY|DELAY|ATTACKMODE|ENTER|ESCAPE|SHIFT|ALT|CTRL|GUI|DOWNARROW|DOWN|UPARROW|UP|LEFTARROW|LEFT|RIGHTARROW|RIGHT|TAB|CAPSLOCK|DELETE|DEL|END|ESC|HOME|INSERT|PAGEUP|PAGEDOWN|PRINTSCREEN|SPACE|BACKSPACE|BREAK|PAUSE|MENU|APP|F1|F2|F3|F4|F5|F6|F7|F8|F9|F10|F11|F12|NUMLOCK|SCROLLLOCK|WINDOWS|CONTROL|COMMAND|OPTION|INJECT_MOD|WAIT_FOR_BUTTON_PRESS|LED_OFF|LED_R|LED_G|HID|STORAGE|OFF|RANDOM_LOWERCASE_LETTER|RANDOM_UPPERCASE_LETTER|RANDOM_LETTER|RANDOM_NUMBER|RANDOM_SPECIAL|RANDOM_CHAR|VID_RANDOM|PID_RANDOM|MAN_RANDOM|PROD_RANDOM|SERIAL_RANDOM|HOLD|RESET|RESTART_PAYLOAD|STOP_PAYLOAD|HIDE_PAYLOAD|RESTORE_PAYLOAD|WAIT_FOR_CAPS_ON|WAIT_FOR_CAPS_OFF|WAIT_FOR_CAPS_CHANGE|WAIT_FOR_NUM_ON|WAIT_FOR_NUM_OFF|WAIT_FOR_NUM_CHANGE|WAIT_FOR_SCROLL_ON|WAIT_FOR_SCROLL_OFF|WAIT_FOR_SCROLL_CHANGE|SAVE_HOST_KEYBOARD_LOCK_STATE|RESTORE_HOST_KEYBOARD_LOCK_STATE|EXFIL|RESTORE_ATTACKMODE|SAVE_ATTACKMODE|RELEASE|SCROLLOCK|RETURN)\\b"
+				}
+			]
+		},
+		"usbArmyKnife": {
+			"patterns": [
+				{
+					"name": "support.function.builtin.usb-army-knife.duckyscript",
+					"match": "\\b(?:TFT_OFF|TFT_ON|DISPLAY_PNG|DISPLAY_TEXT|DISPLAY_CLEAR|LED|LED_B|WEB_OFF|WEB_ON|WIFI_OFF|WIFI_ON|SERIAL|BUTTON_LONG_PRESS|BUTTON_SHORT_PRESS|USB_MOUNT_DISK_READ_ONLY|USB_NCM_PCAP_ON|USB_NCM_PCAP_OFF|WAIT_FOR_USB_STORAGE_ACTIVITY|WAIT_FOR_USB_STORAGE_ACTIVITY_TO_STOP|RAW_HID|AGENT_RUN|WAIT_FOR_AGENT_RUN_RESULT|AGENT_CONNECTED|FILE_EXISTS|CREATE_FILE|DELETE_FILE|LOAD_FILES_FROM_SD|FILE_INDEX_VALID|CALC|ESP32M|RUN_PAYLOAD|KEYBOARD_LAYOUT)\\b"
 				}
 			]
 		}

@@ -1,204 +1,241 @@
-#container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+:root {
+  --panel-radius: 16px;
+  --panel-radius-sm: 12px;
+  --panel-border: var(--vscode-panel-border, var(--vscode-widget-border, transparent));
+  --panel-muted: var(--vscode-descriptionForeground, var(--vscode-foreground));
+  --panel-bg: var(--vscode-sideBar-background, var(--vscode-editor-background));
+  --panel-surface: var(--vscode-editorWidget-background, var(--vscode-editor-background));
+  --panel-surface-alt: var(--vscode-sideBarSectionHeader-background, var(--vscode-editor-background));
+  --panel-surface-hover: var(--vscode-list-hoverBackground, var(--vscode-editor-hoverHighlightBackground, var(--vscode-editor-background)));
+  --panel-accent: var(--vscode-textLink-foreground, var(--vscode-focusBorder));
+  --panel-accent-strong: var(--vscode-button-background, var(--vscode-focusBorder));
+  --panel-accent-foreground: var(--vscode-button-foreground, var(--vscode-editor-background));
+  --panel-badge-bg: var(--vscode-badge-background, var(--vscode-button-secondaryBackground, var(--vscode-editorWidget-background)));
+  --panel-badge-fg: var(--vscode-badge-foreground, var(--vscode-button-secondaryForeground, var(--vscode-foreground)));
+  --panel-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
 }
 
-#container > .container-item {
-    margin: 5px;
-}
-
-#plus-icon, #play-icon {
-    margin-right: 5px;
-}
-
-#run-button {
-    background-color: limegreen;
-}
-
-#options {
-    width: 100%;
-    margin-bottom: 10px;
-}
-
-.option {
-    display: flex;
-    align-items: center;
-}
-
-.fa-trash-can, .fa-trash-can:hover {
-    color: tomato;
-    margin: 5px;
-}
-
-#different-solver {
-    display: flex;
-    align-items: center;
-}
-
+html,
 body {
-    user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    -moz-user-select: none;
-    -khtml-user-select: none;
-    -webkit-user-drag: none;
-    -khtml-user-drag: none;
-  
-    background: #4373c2;
-    color: white;
-  }
-  
-  textarea:focus,
-  input:focus,
-  input[type]:focus,
-  .uneditable-input:focus {
-    outline: none;
-    box-shadow: none;
-    border: none;
-  }
-  .bootstrap-select .btn:focus,
-  .form-select {
-    outline: none;
-  }
-  
-  .panel-heading{
-    margin: 8px 0 5px 0;
-  }
-  h3{
-    margin: 0;
-    padding: 0;
-    font-size: small;
-  }
-  h6{
-    margin: 0;
-    padding: 0;
-  }
-
-  .panel-body {
-    position: relative;
-    margin: 0;
-    padding: 0;
-    border: 0;
-  }
-  
-  .panel-body .panel-title{
-    position: absolute;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    left:0;
-    top:50%;
-    left:50%;
-    transform:translate(-50%, -50%);
-    font-size: 12px;
-    line-height: 100%;
-    text-align: center;
-  }
-  
-  #check{
-    color: #FFF;
-  }
-
-hr.dashed {
-  border-top: 3px dashed #bbb;
+  min-height: 100%;
+  min-width: 40px
 }
 
-.recipe-button {
-  width: 80%;
+body.cookbook-body {
+  padding: 16px;
+  background: var(--panel-bg);
+  color: var(--vscode-foreground);
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  overflow-x: hidden;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+button,
+input,
+textarea,
+select {
+  font: inherit;
 }
-h1, h3 {
-  margin-top: 15px;
+
+button:focus-visible {
+  outline: 1px solid var(--vscode-focusBorder);
+  outline-offset: 2px;
 }
-h3 {
-  margin-bottom: 15px;
-}
-body {
+
+.cookbook-shell {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #011627;
-  min-height: 100vh;
+  flex-direction: column;
+  gap: 16px;
 }
-.list {
-  position: relative;
+
+.hero-card,
+.cookbook-card {
+  border: 1px solid var(--panel-border);
+  border-radius: var(--panel-radius);
+  background: var(--panel-surface);
+  box-shadow: var(--panel-shadow);
 }
-.list h2 {
-  color: #fff;
+
+.hero-card {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 16px;
+  padding: 18px;
+}
+
+.hero-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.eyebrow {
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--panel-accent);
+}
+
+.hero-card h1 {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.25;
+  font-weight: 700;
+  color: var(--vscode-foreground);
+}
+
+.hero-card p,
+.section-header p,
+.status-hint {
+  margin: 0;
+  color: var(--panel-muted);
+  line-height: 1.45;
+}
+
+/* .status-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px;
+  border-radius: var(--panel-radius-sm);
+  background: var(--panel-surface-alt);
+  border: 1px solid var(--panel-border);
+} */
+
+/* .status-label, */
+.section-badge {
+  width: fit-content;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.status-label,
+.section-badge {
+  background: var(--panel-badge-bg);
+  color: var(--panel-badge-fg);
+}
+
+/* .status-chip {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--panel-border);
+  background: var(--vscode-input-background, var(--panel-surface));
+  color: var(--vscode-foreground);
+  font-weight: 600;
+} */
+
+/* .status-chip.is-ready {
+  background: var(--vscode-testing-iconPassed, var(--vscode-badge-background));
+  color: var(--vscode-button-foreground, #ffffff);
+  border-color: var(--vscode-testing-iconPassed, var(--panel-border));
+} */
+
+/* .status-chip.is-warning {
+  background: var(--vscode-inputValidation-warningBackground, var(--vscode-badge-background));
+  color: var(--vscode-inputValidation-warningForeground, var(--vscode-foreground));
+  border-color: var(--vscode-inputValidation-warningBorder, var(--panel-border));
+} */
+
+.section-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.cookbook-card {
+  padding: 16px;
+}
+
+.section-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.section-badge {
   margin-bottom: 10px;
 }
-.list ul {
-  position: relative;
+
+.section-header h2 {
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--vscode-foreground);
 }
-.list ul li {
-  position: relative;
-  left: 0;
-  color: #fce4ec;
+
+.recipe-list {
   list-style: none;
-  margin: 4px 0;
-  border-left: 2px solid #ffbd11;
-  transition: 0.5s;
-  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
-.list ul li:hover {
-  left: 10px;
+
+.recipe-list-item {
+  margin: 0;
 }
-.list ul li span {
-  position: relative;
-  padding: 8px;
-  padding-left: 12px;
-  display: inline-block;
-  z-index: 1;
-  transition: 0.5s;
-}
-.list ul li:hover span {
-  color: #111;
-}
-.list ul li:before {
-  content: "";
-  position: absolute;
+
+.recipe-action {
   width: 100%;
-  height: 100%;
-  background: #ffbd11;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: 0.5s;
-}
-.list ul li:hover:before {
-  transform: scaleX(1);
-}
-
-hr {
-  margin: 1.5em 0;
-  text-align: center;
-  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--panel-border);
+  border-radius: 14px;
+  background: var(--vscode-input-background, var(--panel-surface));
+  color: var(--vscode-foreground);
+  text-align: left;
+  transition: transform 140ms ease, border-color 140ms ease, background 140ms ease;
 }
 
-hr:before {
-  content: '';
-  display: inline-block;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: #eee;
-  margin: 0 0.4em;
+.recipe-action:hover {
+  cursor: pointer;
+  transform: translateY(-1px);
+  border-color: var(--vscode-focusBorder, var(--panel-border));
+  background: var(--panel-surface-hover);
 }
 
-hr:after {
-  content: '';
-  display: inline-block;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: #eee;
-  margin: 0 0.4em;
+.recipe-label {
+  font-weight: 600;
+  line-height: 1.35;
 }
+
+.recipe-meta {
+  flex-shrink: 0;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: var(--panel-accent-strong);
+  color: var(--panel-accent-foreground);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.recipe-action:hover .recipe-meta {
+  background: var(--vscode-button-hoverBackground, var(--panel-accent-strong));
+}
+
+@media (max-width: 720px) {
+  .hero-card {
+    grid-template-columns: 1fr;
+  }
+}
+

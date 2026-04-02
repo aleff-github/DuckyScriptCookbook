@@ -1833,71 +1833,102 @@
 				"fontStyle": ""
 			}
 		},
-		{
+				{
 			"name": "DuckyScript Comments",
 			"scope": [
-				"comments.inline.duckyscript",
-				"comments.block.duckyscript"
+				"comment.line.rem.duckyscript",
+				"comment.block.rem.duckyscript"
 			],
 			"settings": {
 				"fontStyle": "italic",
-				"foreground": "#68B030"
+				"foreground": "#5F9F2C"
 			}
 		},
 		{
-			"name": "DuckyScript Declaration Keywords",
-			"scope": "keywords.declaration.duckyscript",
+			"name": "DuckyScript Variables",
+			"scope": "variable.other.definition.duckyscript",
 			"settings": {
-				"fontStyle": "bold",
+				"fontStyle": "",
 				"foreground": "#2563EB"
 			}
 		},
 		{
-			"name": "DuckyScript Operator Keywords",
-			"scope": "keywords.operator.duckyscript",
+			"name": "DuckyScript Declarations",
+			"scope": [
+				"storage.type.duckyscript",
+				"storage.modifier.duckyscript"
+			],
 			"settings": {
 				"fontStyle": "bold",
-				"foreground": "#9e264c"
+				"foreground": "#1D4ED8"
 			}
 		},
 		{
-			"name": "DuckyScript Statement Keywords",
-			"scope": "keywords.statement.duckyscript",
+			"name": "DuckyScript Operators",
+			"scope": "keyword.operator.duckyscript",
 			"settings": {
 				"fontStyle": "bold",
-				"foreground": "#FF8C00"
+				"foreground": "#C2415D"
 			}
 		},
 		{
-			"name": "DuckyScript True Condition Keywords",
-			"scope": "keywords.truecondition.duckyscript",
+			"name": "DuckyScript Control Keywords",
+			"scope": [
+				"keyword.control.conditional.duckyscript",
+				"keyword.control.loop.duckyscript"
+			],
 			"settings": {
 				"fontStyle": "bold",
-				"foreground": "#8ea34e"
+				"foreground": "#C97A00"
 			}
 		},
 		{
-			"name": "DuckyScript Command Keywords",
-			"scope": "keywords.command.duckyscript",
+			"name": "DuckyScript Boolean Constants",
+			"scope": "constant.language.boolean.duckyscript",
+			"settings": {
+				"fontStyle": "bold",
+				"foreground": "#7A942E"
+			}
+		},
+		{
+			"name": "DuckyScript Built-in Commands",
+			"scope": "support.function.builtin.duckyscript",
 			"settings": {
 				"fontStyle": "bold",
 				"foreground": "#7D4698"
 			}
 		},
 		{
-		  "name": "USB Army Knife Commands",
-		  "scope": [
-			"usb_army_knife.userinterface.duckyscript",
-			"usb_army_knife.hardware.duckyscript",
-			"usb_army_knife.usbfunctionality.duckyscript",
-			"usb_army_knife.hostagent.duckyscript",
-			"usb_army_knife.filehandling.duckyscript",
-			"usb_army_knife.other.duckyscript"
-		  ],
-		  "settings": {
-			"fontStyle": "bold",
-			"foreground": "#4175a0"
-		  }
+			"name": "DuckyScript USB Army Knife Commands",
+			"scope": "support.function.builtin.usb-army-knife.duckyscript",
+			"settings": {
+				"fontStyle": "bold",
+				"foreground": "#2C7DA0"
+			}
+		},
+		{
+			"name": "DuckyScript Function Calls",
+			"scope": "entity.name.function.call.duckyscript",
+			"settings": {
+				"fontStyle": "",
+				"foreground": "#B85C00"
+			}
+		},
+		{
+			"name": "DuckyScript Command Strings",
+			"scope": "string.unquoted.command.duckyscript",
+			"settings": {
+				"fontStyle": "",
+				"foreground": "#B44444"
+			}
+		},
+		{
+			"name": "DuckyScript Numbers",
+			"scope": "constant.numeric.duckyscript",
+			"settings": {
+				"fontStyle": "",
+				"foreground": "#AA0982"
+			}
 		}
 	]
 }

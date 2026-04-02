@@ -160,19 +160,16 @@ export class CodePanelViewProvider implements vscode.WebviewViewProvider {
 			}
 		});
 
-		vscode.window.onDidChangeActiveTextEditor((editor) => {
+		vscode.window.onDidChangeActiveTextEditor(() => {
 			this.showPanel(webviewView.webview);
 		});
 	}
 
 	private _getHtmlForWebview(webview: vscode.Webview) {
-		// Do the same for the stylesheet.
+		const resetUri = webview.asWebviewUri(vscode.Uri.joinPath(this._extension.extensionUri, 'media', 'css', 'reset.css'));
+		const vscodeCssUri = webview.asWebviewUri(vscode.Uri.joinPath(this._extension.extensionUri, 'media', 'css', 'vscode.css'));
 		const styleMainUri = webview.asWebviewUri(vscode.Uri.joinPath(this._extension.extensionUri, 'media', 'css', 'main.css'));
-
-		// Get the local path to main script run in the webview, then convert it to a uri we can use in the webview.
 		const scriptMainUri = webview.asWebviewUri(vscode.Uri.joinPath(this._extension.extensionUri, 'media', 'js', 'main.js'));
-
-		// Use a nonce to only allow a specific script to be run.
 		const nonce = getNonce();
 		const cpBody = getCodePanelBody();
 
@@ -182,11 +179,12 @@ export class CodePanelViewProvider implements vscode.WebviewViewProvider {
 				<meta charset="UTF-8">
 				<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self' data: ${webview.cspSource}; font-src 'self' data: ${webview.cspSource}; img-src 'self' data: ${webview.cspSource}; script-src 'nonce-${nonce}';">
 				<meta name="viewport" content="width=device-width, initial-scale=1.0">
+				<link href="${resetUri}" rel="stylesheet">
+				<link href="${vscodeCssUri}" rel="stylesheet">
 				<link href="${styleMainUri}" rel="stylesheet">
-
 				<title>DuckyScript Cookbook</title>
 			</head>
-			<body class="text-white" oncopy="return false;">
+			<body class="cookbook-body" oncopy="return false;">
 				${cpBody}
 				<script nonce="${nonce}" src="${scriptMainUri}"></script>
 			</body>
@@ -195,9 +193,24 @@ export class CodePanelViewProvider implements vscode.WebviewViewProvider {
 
 	private showPanel(webview: vscode.Webview) {
 		const active = vscode.window.activeTextEditor;
-		if (!active) return;
-		const type = active.document.fileName.split('.').pop();
-		webview.postMessage({ command: type });
+		if (!active) {
+			webview.postMessage({
+				command: 'editorState',
+				fileType: null,
+				languageId: null,
+				isDuckyScript: false,
+			});
+			return;
+		}
+
+		const fileName = active.document.fileName;
+		const fileType = fileName.includes('.') ? fileName.split('.').pop() ?? null : null;
+		webview.postMessage({
+			command: 'editorState',
+			fileType,
+			languageId: active.document.languageId,
+			isDuckyScript: active.document.languageId === 'duckyscript',
+		});
 	}
 }
 
@@ -210,90 +223,95 @@ function getNonce() {
 	return text;
 }
 
-function getCodePanelBody() {
-	const htmlBody = `
-    <div class="container m-2">
-    <h1>Cookbook</h1>
-    <div class="panel panel-primary panel-duckyscript">
-        <div class="panel-heading">
-            <h3>DuckyScript 3.0</h3>
-        </div>
-        <div class="panel-body">
+type RecipeItem = {
+	action: string;
+	label: string;
+};
 
-		<div class="list">
-			<ul>
-				<a href="#" class="btn" role="button" data-act="PAYLOAD_INTRO_3_0">
-					<li><span>Payload Intro</span></li>
-				</a>
-				<a href="#" class="btn" role="button" data-act="DETECT_READY_3_0">
-					<li><span>Detect Ready</span></li>
-				</a>
-				<a href="#" class="btn" role="button" data-act="PASSIVE_WINDOWS_DETECT_3_0">
-					<li><span>Passive Windows Detect</span></li>
-				</a>
-				<a href="#" class="btn" role="button" data-act="ERASE_TRACES_POWERSHELL_3_0">
-					<li><span>Erase Traces Powershell</span></li>
-				</a>
-				<a href="#" class="btn" role="button" data-act="ERASE_TRACES_SHELL_3_0">
-					<li><span>Erase Traces Shell</span></li>
-				</a>
-				<a href="#" class="btn" role="button" data-act="EXFILTRATE_FILES_USING_DROPBOX_WINDOWS_3_0">
-					<li><span>Exfiltrate Files Using Dropbox - Windows</span></li>
-				</a>
-				<a href="#" class="btn" role="button" data-act="OPEN_POWERSHELL_3_0">
-					<li><span>Open Powershell</span></li>
-				</a>
-				<a href="#" class="btn" role="button" data-act="SAVE_FILES_IN_RUBBER_DUCKY_STORAGE_WINDOWS_3_0">
-					<li><span>Save Files In Rubber Ducky Storage - Windows</span></li>
-				</a>
-				<a href="#" class="btn" role="button" data-act="GENERALIZED_WINDOWS_USER_PATH_3_0">
-					<li><span>Generalized Windows User Path</span></li>
-				</a>
-				<a href="#" class="btn" role="button" data-act="NETWORK_EXFILTRATION_3_0">
-					<li><span>Network Exfiltration</span></li>
-				</a>
-				<a href="#" class="btn" role="button" data-act="PHYSICAL_EXFILTRATION_3_0">
-					<li><span>Physical Exfiltration</span></li>
-				</a>
-				<a href="#" class="btn" role="button" data-act="OPEN_SHELL">
-					<li><span>Open A Shell</span></li>
-				</a>
-			</ul>
-		</div>
-		
-		<hr/>
+type RecipeSection = {
+	title: string;
+	badge: string;
+	description: string;
+	items: RecipeItem[];
+};
 
-		<div class="panel-heading">
-            <h3>DuckyScript 1.0</h3>
-        </div>
-        <div class="panel-body">
-			<div class="list">
-				<ul>
-					<a href="#" class="btn" role="button" data-act="PAYLOAD_INTRO_1_0">
-						<li><span>Payload Intro</span></li>
-					</a>
-					<a href="#" class="btn" role="button" data-act="ERASE_TRACES_POWERSHELL_1_0">
-						<li><span>Erase Traces Powershell</span></li>
-					</a>
-					<a href="#" class="btn" role="button" data-act="ERASE_TRACES_SHELL_1_0">
-						<li><span>Erase Traces Shell</span></li>
-					</a>
-					<a href="#" class="btn" role="button" data-act="EXFILTRATE_FILES_USING_DROPBOX_WINDOWS_1_0">
-						<li><span>Exfiltrate Files Using Dropbox Windows</span></li>
-					</a>
-					<a href="#" class="btn" role="button" data-act="OPEN_POWERSHELL_1_0">
-						<li><span>Open Powershell</span></li>
-					</a>
-					<a href="#" class="btn" role="button" data-act="GENERALIZED_WINDOWS_USER_PATH_1_0">
-						<li><span>Generalized Windows User Path</span></li>
-					</a>
-					<a href="#" class="btn" role="button" data-act="OPEN_SHELL">
-						<li><span>Open A Shell</span></li>
-					</a>
-				</ul>
+const recipeSections: RecipeSection[] = [
+	{
+		title: 'DuckyScript 3.0',
+		badge: 'Modern payloads',
+		description: 'Ready-to-insert recipes for Rubber Ducky workflows based on DuckyScript 3.0.',
+		items: [
+			{ action: 'PAYLOAD_INTRO_3_0', label: 'Payload Intro' },
+			{ action: 'DETECT_READY_3_0', label: 'Detect Ready' },
+			{ action: 'PASSIVE_WINDOWS_DETECT_3_0', label: 'Passive Windows Detect' },
+			{ action: 'ERASE_TRACES_POWERSHELL_3_0', label: 'Erase Traces Powershell' },
+			{ action: 'ERASE_TRACES_SHELL_3_0', label: 'Erase Traces Shell' },
+			{ action: 'EXFILTRATE_FILES_USING_DROPBOX_WINDOWS_3_0', label: 'Exfiltrate Files Using Dropbox - Windows' },
+			{ action: 'OPEN_POWERSHELL_3_0', label: 'Open Powershell' },
+			{ action: 'SAVE_FILES_IN_RUBBER_DUCKY_STORAGE_WINDOWS_3_0', label: 'Save Files In Rubber Ducky Storage - Windows' },
+			{ action: 'GENERALIZED_WINDOWS_USER_PATH_3_0', label: 'Generalized Windows User Path' },
+			{ action: 'NETWORK_EXFILTRATION_3_0', label: 'Network Exfiltration' },
+			{ action: 'PHYSICAL_EXFILTRATION_3_0', label: 'Physical Exfiltration' },
+			{ action: 'OPEN_SHELL', label: 'Open A Shell' },
+		],
+	},
+	{
+		title: 'DuckyScript 1.0',
+		badge: 'Legacy payloads',
+		description: 'Classic payload templates kept available for backwards-compatible workflows.',
+		items: [
+			{ action: 'PAYLOAD_INTRO_1_0', label: 'Payload Intro' },
+			{ action: 'ERASE_TRACES_POWERSHELL_1_0', label: 'Erase Traces Powershell' },
+			{ action: 'ERASE_TRACES_SHELL_1_0', label: 'Erase Traces Shell' },
+			{ action: 'EXFILTRATE_FILES_USING_DROPBOX_WINDOWS_1_0', label: 'Exfiltrate Files Using Dropbox Windows' },
+			{ action: 'OPEN_POWERSHELL_1_0', label: 'Open Powershell' },
+			{ action: 'GENERALIZED_WINDOWS_USER_PATH_1_0', label: 'Generalized Windows User Path' },
+			{ action: 'OPEN_SHELL', label: 'Open A Shell' },
+		],
+	},
+];
+
+function getRecipeMarkup(items: RecipeItem[]) {
+	return items.map(item => `
+		<li class="recipe-list-item">
+			<button class="recipe-action" type="button" data-act="${item.action}" title="Insert ${item.label}">
+				<span class="recipe-label">${item.label}</span>
+				<span class="recipe-meta">Insert</span>
+			</button>
+		</li>`).join('');
+}
+
+function getSectionMarkup(section: RecipeSection) {
+	return `
+		<section class="cookbook-card" aria-label="${section.title}">
+			<div class="section-header">
+				<div>
+					<div class="section-badge">${section.badge}</div>
+					<h2>${section.title}</h2>
+					<p>${section.description}</p>
+				</div>
 			</div>
-        </div>
-    </div><div id="check"></div>
+			<ul class="recipe-list">
+				${getRecipeMarkup(section.items)}
+			</ul>
+		</section>`;
+}
+
+function getCodePanelBody() {
+	const sections = recipeSections.map(getSectionMarkup).join('');
+	const htmlBody = `
+		<main class="cookbook-shell">
+			<header class="hero-card">
+				<div class="hero-copy">
+					<div class="eyebrow">DuckyScript Cookbook</div>
+					<h1>Payload recipes that follow your editor theme</h1>
+					<p>Select text in the active editor and click a recipe to replace it with a ready-to-use payload template.</p>
+				</div>
+			</header>
+			<div class="section-grid">
+				${sections}
+			</div>
+		</main>
 	`;
 	return htmlBody;
 }

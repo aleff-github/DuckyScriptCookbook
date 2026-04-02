@@ -1816,11 +1816,11 @@
           "fontStyle": ""
         }
       },
-      {
+            {
         "name": "DuckyScript Comments",
         "scope": [
-          "comments.inline.duckyscript",
-          "comments.block.duckyscript"
+          "comment.line.rem.duckyscript",
+          "comment.block.rem.duckyscript"
         ],
         "settings": {
           "fontStyle": "italic",
@@ -1828,58 +1828,89 @@
         }
       },
       {
-        "name": "DuckyScript Declaration Keywords",
-        "scope": "keywords.declaration.duckyscript",
+        "name": "DuckyScript Variables",
+        "scope": "variable.other.definition.duckyscript",
+        "settings": {
+          "fontStyle": "",
+          "foreground": "#61AFEF"
+        }
+      },
+      {
+        "name": "DuckyScript Declarations",
+        "scope": [
+          "storage.type.duckyscript",
+          "storage.modifier.duckyscript"
+        ],
         "settings": {
           "fontStyle": "bold",
           "foreground": "#3B82F6"
         }
       },
       {
-        "name": "DuckyScript Operator Keywords",
-        "scope": "keywords.operator.duckyscript",
+        "name": "DuckyScript Operators",
+        "scope": "keyword.operator.duckyscript",
         "settings": {
           "fontStyle": "bold",
-          "foreground": "#b82b58"
+          "foreground": "#E06C75"
         }
       },
       {
-        "name": "DuckyScript Statement Keywords",
-        "scope": "keywords.statement.duckyscript",
-        "settings": {
-          "fontStyle": "bold",
-          "foreground": "#ffbd11"
-        }
-      },
-      {
-        "name": "DuckyScript True Condition Keywords",
-        "scope": "keywords.truecondition.duckyscript",
-        "settings": {
-          "fontStyle": "bold",
-          "foreground": "#bdda68"
-        }
-      },
-      {
-        "name": "DuckyScript Command Keywords",
-        "scope": "keywords.command.duckyscript",
-        "settings": {
-          "fontStyle": "bold",
-          "foreground": "#af63d5"
-        }
-      },
-      {
-        "name": "USB Army Knife Commands",
+        "name": "DuckyScript Control Keywords",
         "scope": [
-          "usb_army_knife.userinterface.duckyscript",
-          "usb_army_knife.hardware.duckyscript",
-          "usb_army_knife.usbfunctionality.duckyscript",
-          "usb_army_knife.hostagent.duckyscript",
-          "usb_army_knife.filehandling.duckyscript",
-          "usb_army_knife.other.duckyscript"
+          "keyword.control.conditional.duckyscript",
+          "keyword.control.loop.duckyscript"
         ],
         "settings": {
           "fontStyle": "bold",
-          "foreground": "#61AFEF"
+          "foreground": "#E5C07B"
+        }
+      },
+      {
+        "name": "DuckyScript Boolean Constants",
+        "scope": "constant.language.boolean.duckyscript",
+        "settings": {
+          "fontStyle": "bold",
+          "foreground": "#B5D66B"
+        }
+      },
+      {
+        "name": "DuckyScript Built-in Commands",
+        "scope": "support.function.builtin.duckyscript",
+        "settings": {
+          "fontStyle": "bold",
+          "foreground": "#C678DD"
+        }
+      },
+      {
+        "name": "DuckyScript USB Army Knife Commands",
+        "scope": "support.function.builtin.usb-army-knife.duckyscript",
+        "settings": {
+          "fontStyle": "bold",
+          "foreground": "#56B6C2"
+        }
+      },
+      {
+        "name": "DuckyScript Function Calls",
+        "scope": "entity.name.function.call.duckyscript",
+        "settings": {
+          "fontStyle": "",
+          "foreground": "#D19A66"
+        }
+      },
+      {
+        "name": "DuckyScript Command Strings",
+        "scope": "string.unquoted.command.duckyscript",
+        "settings": {
+          "fontStyle": "",
+          "foreground": "#98C379"
+        }
+      },
+      {
+        "name": "DuckyScript Numbers",
+        "scope": "constant.numeric.duckyscript",
+        "settings": {
+          "fontStyle": "",
+          "foreground": "#D19A66"
         }
       }
     ]

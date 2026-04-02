@@ -34,7 +34,7 @@
 					"light": "./images/icon.png",
 					"dark": "./images/icon.png"
 				},
-                "configuration": "./language-configuration.json"
+				"configuration": "./language-configuration.json"
 			}
 		],
 		"grammars": [
@@ -47,7 +47,7 @@
 		"themes": [
 			{
 				"label": "DarkDuckyScript",
-				"uiTheme": "vs",
+				"uiTheme": "vs-dark",
 				"path": "./themes/DarkDuckyScript-color-theme.json"
 			},
 			{
