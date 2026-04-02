@@ -3,7 +3,6 @@
 (function () {
     const vscode = acquireVsCodeApi();
 
-    // const statusElement = /** @type {HTMLElement | null} */ (document.getElementById('editor-status'));
     const hintElement = /** @type {HTMLElement | null} */ (document.getElementById('editor-hint'));
 
     window.addEventListener('message', event => {
@@ -18,34 +17,6 @@
     function init() {
         vscode.postMessage({ type: 'showPanel' });
     }
-
-    // function updateEditorState(message) {
-    //     if (!statusElement || !hintElement) {
-    //         return;
-    //     }
-
-    //     statusElement.classList.remove('is-ready', 'is-warning');
-
-    //     if (!message.languageId) {
-    //         statusElement.textContent = 'No active editor';
-    //         statusElement.classList.add('is-warning');
-    //         hintElement.textContent = 'Open a DuckyScript file to insert a payload into the current selection.';
-    //         return;
-    //     }
-
-    //     const extension = message.fileType ? `.${message.fileType}` : 'unknown file';
-
-    //     if (message.isDuckyScript) {
-    //         statusElement.textContent = `Ready for ${extension}`;
-    //         statusElement.classList.add('is-ready');
-    //         hintElement.textContent = 'The selected recipe will replace the current selection in the active DuckyScript editor.';
-    //         return;
-    //     }
-
-    //     statusElement.textContent = `Editing ${extension}`;
-    //     statusElement.classList.add('is-warning');
-    //     hintElement.textContent = 'Recipes can still be inserted, but the best experience is in a DuckyScript file.';
-    // }
 
     // DuckyScript 3.0 Payloads
     const FunctionList = {

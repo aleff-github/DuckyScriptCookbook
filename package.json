@@ -1,119 +1,136 @@
 {
-	"name": "duckyscriptcookbook",
-	"displayName": "DuckyScript Cookbook",
-	"description": "DuckyScript Cookbook is a VSCode extension that simplifies writing DuckyScript code for USB Rubber Ducky devices.",
-	"version": "1.0.6",
-	"publisher": "Aleff",
-	"engines": {
-		"vscode": "^1.74.3"
-	},
-	"author": {
-		"name": "Aleff"
-	},
-	"categories": [
-		"Programming Languages",
-		"Themes",
-		"Snippets"
-	],
-	"main": "./out/extension.js",
-	"contributes": {
-		"languages": [
-			{
-				"id": "duckyscript",
-				"aliases": [
-					"DuckyScript",
-					"duckyscript",
-					"ds"
-				],
-				"extensions": [
-					".txt",
-					".ds",
-					".duckyscript"
-				],
-				"icon": {
-					"light": "./images/icon.png",
-					"dark": "./images/icon.png"
-				},
-				"configuration": "./language-configuration.json"
-			}
-		],
-		"grammars": [
-			{
-				"language": "duckyscript",
-				"scopeName": "source.duckyscript",
-				"path": "./syntaxes/duckyscript.tmLanguage.json"
-			}
-		],
-		"themes": [
-			{
-				"label": "DarkDuckyScript",
-				"uiTheme": "vs-dark",
-				"path": "./themes/DarkDuckyScript-color-theme.json"
-			},
-			{
-				"label": "LightDuckyScript",
-				"uiTheme": "vs",
-				"path": "./themes/LightDuckyScript-color-theme.json"
-			}
-		],
-		"commands": [
-			{
-				"command": "duckyscript.Cookbook",
-				"title": "DuckyScript Cookbook"
-			}
-		],
-		"viewsContainers": {
-			"activitybar": [
-				{
-					"id": "DuckyScriptCookbook",
-					"title": "DuckyScript Cookbook",
-					"icon": "media/icon/icon.svg"
-				}
-			]
-		},
-		"views": {
-			"DuckyScriptCookbook": [
-				{
-					"type": "webview",
-					"id": "duckyscript.Cookbook",
-					"name": "DuckyScript Cookbook"
-				}
-			]
-		},
-		"snippets": [
-			{
-				"language": "duckyscript",
-				"path": "./snippets/snippets.json"
-			}
-		]
-	},
-	"scripts": {
-		"vscode:prepublish": "npm run compile",
-		"compile": "tsc -p ./",
-		"watch": "tsc -watch -p ./",
-		"lint": "eslint src --ext ts",
-		"build": "tsc"
-	},
-	"devDependencies": {
-		"@types/node": "^16.18.108",
-		"@types/vscode": "^1.69.0"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/aleff-github/DuckyScriptCookbook.git"
-	},
-	"homepage": "https://github.com/aleff-github/DuckyScriptCookbook",
-	"icon": "images/icon.png",
-	"dependencies": {
-		"@types/vscode": "^1.69.0",
-		"sys": "^0.0.1",
-		"util": "^0.12.5",
-		"vscode-test": "^1.6.1"
-	},
-	"__metadata": {
-		"id": "849ae603-6959-49c0-ae4c-a7c187456436",
-		"publisherDisplayName": "duckyscriptcookbook",
-		"publisherId": "44531327-6e3d-43b9-a672-aadcfd084dc5",
-		"isPreReleaseVersion": false
-	}
+  "name": "duckyscriptcookbook",
+  "displayName": "DuckyScript Cookbook",
+  "description": "DuckyScript support for VS Code and VSCodium with syntax highlighting, snippets, inline command help, optional themes, and a cookbook panel for payload workflows.",
+  "version": "1.1.0",
+  "publisher": "Aleff",
+  "license": "GPL-3.0-only",
+  "engines": {
+    "vscode": "^1.74.3"
+  },
+  "author": {
+    "name": "Aleff"
+  },
+  "categories": [
+    "Programming Languages",
+    "Themes",
+    "Snippets"
+  ],
+  "keywords": [
+    "duckyscript",
+    "hak5",
+    "rubber-ducky",
+    "usb-rubber-ducky",
+    "payloads",
+    "flipper-zero",
+    "snippets",
+    "syntax-highlighting"
+  ],
+  "icon": "images/icon.png",
+  "main": "./out/extension.js",
+  "files": [
+    "out/**",
+    "media/**",
+    "assets/**",
+    "images/**",
+    "snippets/**",
+    "syntaxes/**",
+    "themes/**",
+    "language-configuration.json",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE",
+    "package.json"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "duckyscript",
+        "aliases": [
+          "DuckyScript",
+          "duckyscript",
+          "ds"
+        ],
+        "extensions": [
+          ".txt",
+          ".ds",
+          ".duckyscript"
+        ],
+        "icon": {
+          "light": "./images/icon.png",
+          "dark": "./images/icon.png"
+        },
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "duckyscript",
+        "scopeName": "source.duckyscript",
+        "path": "./syntaxes/duckyscript.tmLanguage.json"
+      }
+    ],
+    "themes": [
+      {
+        "label": "DarkDuckyScript",
+        "uiTheme": "vs-dark",
+        "path": "./themes/DarkDuckyScript-color-theme.json"
+      },
+      {
+        "label": "LightDuckyScript",
+        "uiTheme": "vs",
+        "path": "./themes/LightDuckyScript-color-theme.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "duckyscript.Cookbook",
+        "title": "DuckyScript Cookbook"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "DuckyScriptCookbook",
+          "title": "DuckyScript Cookbook",
+          "icon": "media/icon/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "DuckyScriptCookbook": [
+        {
+          "type": "webview",
+          "id": "duckyscript.Cookbook",
+          "name": "DuckyScript Cookbook"
+        }
+      ]
+    },
+    "snippets": [
+      {
+        "language": "duckyscript",
+        "path": "./snippets/snippets.json"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts",
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@types/node": "^16.18.108",
+    "@types/vscode": "^1.69.0",
+    "typescript": "^5.9.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aleff-github/DuckyScriptCookbook.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aleff-github/DuckyScriptCookbook/issues"
+  },
+  "homepage": "https://github.com/aleff-github/DuckyScriptCookbook"
 }

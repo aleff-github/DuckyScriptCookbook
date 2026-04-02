@@ -1,3 +1,6 @@
-dist
 node_modules
+dist
 *.vsix
+*.tgz
+*.log
+.DS_Store

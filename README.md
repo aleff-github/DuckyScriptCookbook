@@ -1,118 +1,81 @@
 # 🦆 DuckyScript Cookbook
 
-Welcome to the **DuckyScript Cookbook** - your quacktastic assistant for whipping up DuckyScript magic in no time! 🚀
+Write DuckyScript with less friction, better hints, and a handy cookbook panel full of ready-to-use payload ideas.
 
-## Available On
-
-<a href="https://open-vsx.org/extension/Aleff/duckyscriptcookbook"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/VSCodium_Logo.png/960px-VSCodium_Logo.png?20200326145922" width="60" alt="VSCodium logo" style="vertical-align: middle; margin-right: 8px;"/></a> <a href="https://marketplace.visualstudio.com/items?itemName=Aleff.duckyscriptcookbook"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/960px-Visual_Studio_Code_1.35_icon.svg.png" width="60" alt="VSCode logo" style="vertical-align: middle; margin-right: 8px;"/></a>
-
-_This is not an official extension of Hak5 or Flipper Zero but was developed by a third party._
+**DuckyScript Cookbook** is a community-made extension for **VS Code** and **VSCodium** that makes DuckyScript easier to read, faster to write, and a bit more fun to work with.
 
 ![](https://github.com/aleff-github/Deposito/blob/main/DuckyScriptCookbook/Hak5%20Disclaimer.png?raw=true)
 
-## Index
+## Why install it?
 
-   - [Features](#features)
-   - [How To](#how-to-use-this-ducktastic-extension-)
-   - [Threads](#threads)
-   - [Other Stuff](#other-stuff)
+Because plain text payload files deserve a little love too.
 
-## Features
+With DuckyScript Cookbook you get:
 
-### New Feature: Tips While Writing (*This feature is not yet complete*)
+- syntax highlighting for DuckyScript
+- autocomplete with inline command help
+- snippets for common structures and commands
+- a cookbook side panel with ready-to-insert payload recipes
+- optional bundled light and dark themes
+- support for standard editor themes too
+- early support for newer Pager-related commands
 
-Now while you are writing you just need to press the CTRL SPACE combination to get some great tips from the official [Hak5 documentation](https://docs.hak5.org/hak5-usb-rubber-ducky). If you start writing down what you need, it will be even easier to reduce your search in the documentation!
+## What it feels like to use
 
-![](https://github.com/aleff-github/Deposito/blob/main/DuckyScriptCookbook/last_feature.gif?raw=true)
+### Better colors, without forcing a theme
 
-### Syntax Highlighting Dark && Light
+The extension highlights DuckyScript nicely even with your usual VS Code or VSCodium theme.
 
-Syntax highlighting now works with standard VS Code and VSCodium themes too. The bundled Dark and Light DuckyScript themes are optional and give you a more tailored color palette if you want the full cookbook look.
+If you want the full cookbook vibe, you can also switch to the bundled **DuckyScript Light** or **DuckyScript Dark** themes.
 
-![](https://github.com/aleff-github/Deposito/blob/main/DuckyScriptCookbook/syntax-highlighting.gif?raw=true)
+### Help while you type
 
-### What's Cooking? 🍳
+Start writing and trigger suggestions with `Ctrl+Space`.
 
-DuckyScript Cookbook is a simple yet powerful VSCode extension that helps you speedily paste ready-made DuckyScript snippets into your text files. Whether you're a coding newbie or a seasoned pro, we've got the right recipe to spice up your scripting experience!
+Commands, functions, and structures come with short inline explanations so you can stay in the editor instead of jumping back and forth between docs and notes.
 
-<img src="https://github.com/aleff-github/DuckyScriptCookbook/blob/main/images/icon.png?raw=true" width="150"/>
+### A cookbook panel for quick payload building
 
-### Features That Will Make You Quack with Joy 🥳
+Open the **DuckyScript Cookbook** view from the activity bar and insert recipe templates with a click.
 
-#### 🐤 A Duck Icon for Your Text Files
+It is especially handy when you want to:
 
-Ever wanted more ducks in your life? Now you can have an adorable duck icon grace all your text files! Sure, some might not be payloads, but who cares? Ducks make everything better, right? 🦆✨
+- start from a working payload skeleton
+- replace selected text with a recipe
+- keep reusable building blocks close to the editor
 
-![Duck in the text](https://github.com/aleff-github/Deposito/blob/main/DuckyScriptCookbook/Ducky-In-The-Text.png?raw=true)
+### Snippets that save repetitive typing
 
-#### 📖 Ready-to-Use Recipes (Sadly, Not Edible)
-Dive into our collection of pre-made DuckyScript "recipes" that are ready to be served hot into your projects. From simple tasks to complex operations, we've got a dish for every occasion. Bon appétit... err, we mean, happy coding! 🍽️
+Loops, conditions, common commands, and reusable structures are quicker to drop in, tweak, and reuse.
 
-![DuckyScript Cookbook](https://github.com/aleff-github/Deposito/blob/main/DuckyScriptCookbook/Ducky-Script-Cookbook.gif?raw=true)
+## Quick start
 
-#### 📝 Useful Snippets and Where to Find Them
-Channel your inner wizard and explore a library of handy snippets waiting to be discovered. No Marauder's Map needed—just a couple of clicks, and you're there! Accio, perfect script! 🧙‍♂️✨
+1. Open a `.ds`, `.duckyscript`, or compatible text file.
+2. Start typing DuckyScript.
+3. Press `Ctrl+Space` to explore commands and inline help.
+4. Open the **DuckyScript Cookbook** panel from the activity bar.
+5. Click a recipe to insert it into the active editor.
 
-![Usefull Snippets](https://github.com/aleff-github/Deposito/blob/main/DuckyScriptCookbook/Usefull-Snippets.gif?raw=true)
+## Great for
 
-#### 😎 A Cool Style to Show Off to Your Desk Neighbors
-Tired of boring old scripts? Impress your colleagues with slick and stylish code that's as cool as the other side of the pillow. They'll be so jealous, they might just quack in envy! 🕶️🔥
+- learning DuckyScript a little faster
+- building payloads without starting from scratch every time
+- keeping recipes and snippets one click away
+- writing in a cleaner, more readable editor experience
 
-![DuckyScript Cookbook](https://github.com/aleff-github/Deposito/blob/main/DuckyScriptCookbook/Beautiful-Menu.gif?raw=true)
+## Available on
 
-## How to Use This Ducktastic Extension 🦆💻
+- **VS Code Marketplace**
+- **Open VSX / VSCodium**
 
-1. **Install the Extension**:
-   - Head over to the VSCode Extensions Marketplace.
-   - Search for **"DuckyScript Cookbook"**.
-   - Click that shiny **"Install"** button.
-   - Voilà! You're ready to roll.
+## Feedback, ideas, and contributions
 
-2. **Insert Snippets and Recipes**:
-   - Open any text file in VSCode.
-   - Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on Mac) to open the command palette.
-   - Type **"DuckyScript Cookbook"** and select your desired snippet or recipe.
-   - Watch as your script transforms into a masterpiece before your eyes!
+Got a recipe idea, found a bug, or want support for more DuckyScript features?
 
-3. **Enjoy the Duck Icons**:
-   - Sit back and admire those cute duck icons adorning your files. Share the joy with your friends and turn your workspace into a virtual duck pond! 🦆🌊
+Open an issue or contribute on GitHub:
 
-## Why You'll Love It ❤️
+- GitHub repository: `aleff-github/DuckyScriptCookbook`
 
-- **Time Saver**: Spend less time typing repetitive code and more time doing what you love.
-- **User-Friendly**: Perfect for both beginners and experts alike. Simple, intuitive, and fun!
-- **Customizable**: Tailor the snippets and recipes to fit your unique needs and preferences.
-- **Mood Booster**: Because who wouldn't smile seeing ducks all over their workspace?
+## License
 
-## Threads
-
-### Feedback and Contributions 🗣️
-
-We'd love to hear your thoughts, ideas, and duck jokes! If you have any suggestions or want to contribute to making this extension even more awesome, head over to our [GitHub repository](https://github.com/aleff-github/DuckyScriptCookbook) and let’s make some waves together. 🦆🤝
-
-### Auto switch themes
-
-It is annoying to change the topic I admit and we are trying to think of a solution... for now a trick has been posted that may come in handy but join the thread to find a better solution for everyone. [Read more...](https://github.com/aleff-github/DuckyScriptCookbook/issues/1)
-
-### Supporting new DuckyScript-based creations
-
-There are many devices that support the DuckyScript language in addition to the Hak5 devices such as the USB Rubber Ducky or the Flipper Zero. Here we are trying to figure out how to include the new features within the Syntax Highlighting system. [Read more...](https://github.com/aleff-github/DuckyScriptCookbook/issues/2)
-
-## Other Stuff
-
-### License 📄
-
-This project is licensed under the [GPLv3 License](./LICENSE). Feel free to use, modify, and distribute as you like. Spread the ducky love! 🦆❤️
-
-### Special Thanks 🎉
-
-A big quacking thank you to all the developers and contributors who made this project possible. You’re all ducking amazing! 🙌 Oh but wait, I'm just -- would you like to hear this thank you from you? [Contribute by reporting](https://github.com/aleff-github/DuckyScriptCookbook/issues) new recipes or snippets!
-
-### Credits
-
-- Duck PNG image: <a href="https://www.flaticon.com/free-icons/water-toy" title="water toy icons">Water toy icons created by cube29 - Flaticon</a> | Flaticon License
-- Duck SVG image: <a href="https://www.svgrepo.com/svg/485117/duck">Flat Icon Design Sepia Vectors - flat-icon-design</a> | Public Domain Licence
-
----
-
-Happy Hacking and may the ducks be ever in your favor! 🦆💻✨
+Released under the **GPLv3** license. See [LICENSE](./LICENSE).

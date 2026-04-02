@@ -8,7 +8,7 @@ logo: "./images/icon.png"
 repository: "aleff-github/DuckyScriptCookbook"
 author:
   name   : "Aleff"
-  avatar : "aleff.jpg"  # placed in /images/
-  bio    : "I'm Alessandro Greco, aka Aleff, a Computer Science graduate with a passion for networks and IT security."
+  avatar : "aleff.jpg"
+  bio    : "I'm Alessandro Greco, aka Aleff, a computer science graduate with a passion for IT security."
   email  : "alessandro.greco.1@protonmail.com"
   uri    : "https://aleff-gitlab.gitlab.io/"

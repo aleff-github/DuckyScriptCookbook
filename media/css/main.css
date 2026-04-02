@@ -96,18 +96,6 @@ button:focus-visible {
   line-height: 1.45;
 }
 
-/* .status-panel {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 8px;
-  padding: 14px;
-  border-radius: var(--panel-radius-sm);
-  background: var(--panel-surface-alt);
-  border: 1px solid var(--panel-border);
-} */
-
-/* .status-label, */
 .section-badge {
   width: fit-content;
   padding: 4px 10px;
@@ -123,30 +111,6 @@ button:focus-visible {
   background: var(--panel-badge-bg);
   color: var(--panel-badge-fg);
 }
-
-/* .status-chip {
-  display: inline-flex;
-  align-items: center;
-  width: fit-content;
-  padding: 6px 10px;
-  border-radius: 999px;
-  border: 1px solid var(--panel-border);
-  background: var(--vscode-input-background, var(--panel-surface));
-  color: var(--vscode-foreground);
-  font-weight: 600;
-} */
-
-/* .status-chip.is-ready {
-  background: var(--vscode-testing-iconPassed, var(--vscode-badge-background));
-  color: var(--vscode-button-foreground, #ffffff);
-  border-color: var(--vscode-testing-iconPassed, var(--panel-border));
-} */
-
-/* .status-chip.is-warning {
-  background: var(--vscode-inputValidation-warningBackground, var(--vscode-badge-background));
-  color: var(--vscode-inputValidation-warningForeground, var(--vscode-foreground));
-  border-color: var(--vscode-inputValidation-warningBorder, var(--panel-border));
-} */
 
 .section-grid {
   display: grid;

@@ -1,5 +1,5 @@
 # Sample workflow for building and deploying a Jekyll site to GitHub Pages
-name: A VSCode extension that speeds up DuckyScript development with ready-to-use snippets and fun ducky icons for a more efficient and enjoyable scripting experience.
+name: Deploy GitHub Pages
 
 on:
   # Runs on pushes targeting the default branch
