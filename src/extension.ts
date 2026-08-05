@@ -54,6 +54,54 @@ const updatedCommandGroups = commandGroups.map(group =>
 
 const ALL_COMMANDS = commandGroups.flat();
 
+const semanticTokenLegend = new vscode.SemanticTokensLegend(
+    ['customCommand'],
+    []
+);
+
+class CustomCommandSemanticTokensProvider implements vscode.DocumentSemanticTokensProvider {
+    private customCommands: Set<string> = new Set();
+    private _emitter = new vscode.EventEmitter<void>();
+    onDidChangeSemanticTokens = this._emitter.event;
+
+    constructor() {
+        this.updateCustomCommands();
+        vscode.workspace.onDidChangeConfiguration(e => {
+            if (e.affectsConfiguration('duckyscript.customCommands')) {
+                this.updateCustomCommands();
+                this._emitter.fire();
+            }
+        });
+    }
+
+    private updateCustomCommands() {
+        const config = vscode.workspace.getConfiguration('duckyscript');
+        const commands = config.get<string[]>('customCommands', []);
+        this.customCommands = new Set(commands.map(c => c.toUpperCase()));
+    }
+
+    provideDocumentSemanticTokens(
+        document: vscode.TextDocument,
+        _token: vscode.CancellationToken
+    ): vscode.ProviderResult<vscode.SemanticTokens> {
+        const builder = new vscode.SemanticTokensBuilder(semanticTokenLegend);
+        for (let i = 0; i < document.lineCount; i++) {
+            const line = document.lineAt(i);
+            const match = line.text.match(/^\s*([A-Z_][A-Z0-9_]*)\b/);
+            if (match && this.customCommands.has(match[1].toUpperCase())) {
+                builder.push({
+                    line: i,
+                    startColumn: match.index ?? 0,
+                    length: match[1].length,
+                    tokenType: 0,
+                    tokenModifiers: 0
+                });
+            }
+        }
+        return builder.build();
+    }
+}
+
 // We implement a CompletionItemProvider for our language
 class MyLanguageCompletionItemProvider implements vscode.CompletionItemProvider {
     // This method is called when the user activates the suggestions (e.g., Ctrl+Space)
@@ -98,6 +146,13 @@ export function activate(context: vscode.ExtensionContext) {
     );
 
     context.subscriptions.push(providerDisposable);
+
+    // Custom commands syntax highlighting
+    const customTokenProvider = vscode.languages.registerDocumentSemanticTokensProvider(
+        { language: 'duckyscript' },
+        new CustomCommandSemanticTokensProvider()
+    );
+    context.subscriptions.push(customTokenProvider);
 }
 
 function deactivate() { }

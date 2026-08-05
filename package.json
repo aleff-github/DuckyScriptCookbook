@@ -111,7 +111,19 @@
         "language": "duckyscript",
         "path": "./snippets/snippets.json"
       }
-    ]
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "DuckyScript",
+      "properties": {
+        "duckyscript.customCommands": {
+          "type": "array",
+          "items": { "type": "string" },
+          "default": [],
+          "description": "List of custom commands to highlight in DuckyScript files."
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
