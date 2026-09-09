@@ -1,7 +1,7 @@
 {
     "name": "DuckyScript - Night Owl based",
     "type": "dark",
-    "semanticHighlighting": false,
+    "semanticHighlighting": true,
     "colors": {
       "contrastBorder": "#122d42",
       "focusBorder": "#122d42",

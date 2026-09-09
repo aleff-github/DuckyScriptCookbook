@@ -48,6 +48,56 @@ const commandGroups = [
 const suffix = `\n*Source: https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference*\n\n*Did you find something incorrect or something missing? [Write it to me](https://github.com/aleff-github/DuckyScriptCookbook/issues) to contribute or edit it yourself!*`;
 const updatedCommandGroups = commandGroups.map(group => group.map(command => command.doc.appendMarkdown(suffix)));
 const ALL_COMMANDS = commandGroups.flat();
+const CUSTOM_COMMAND_TOKEN = 'duckyscriptCustomCommand';
+const semanticTokenLegend = new vscode.SemanticTokensLegend([CUSTOM_COMMAND_TOKEN], []);
+function escapeRegExp(text) {
+    return text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+class CustomCommandSemanticTokensProvider {
+    constructor() {
+        this._emitter = new vscode.EventEmitter();
+        this.onDidChangeSemanticTokens = this._emitter.event;
+        this.updateCustomCommands();
+        this._configListener = vscode.workspace.onDidChangeConfiguration(e => {
+            if (e.affectsConfiguration('duckyscript.customCommands')) {
+                this.updateCustomCommands();
+                this._emitter.fire();
+            }
+        });
+    }
+    updateCustomCommands() {
+        const config = vscode.workspace.getConfiguration('duckyscript');
+        const commands = config.get('customCommands', [])
+            .filter(c => typeof c === 'string' && c.trim().length > 0)
+            .map(c => c.trim())
+            // Longest first, so PREFIX_LONG wins over PREFIX.
+            .sort((a, b) => b.length - a.length);
+        this.commandPattern = commands.length
+            ? new RegExp(`^\\s*(${commands.map(escapeRegExp).join('|')})(?![\\w-])`, 'i')
+            : undefined;
+    }
+    provideDocumentSemanticTokens(document, token) {
+        const builder = new vscode.SemanticTokensBuilder(semanticTokenLegend);
+        if (!this.commandPattern) {
+            return builder.build();
+        }
+        for (let i = 0; i < document.lineCount; i++) {
+            if (token.isCancellationRequested) {
+                return builder.build();
+            }
+            const match = this.commandPattern.exec(document.lineAt(i).text);
+            if (match) {
+                const startColumn = match[0].length - match[1].length;
+                builder.push(i, startColumn, match[1].length, 0, 0);
+            }
+        }
+        return builder.build();
+    }
+    dispose() {
+        this._configListener.dispose();
+        this._emitter.dispose();
+    }
+}
 // We implement a CompletionItemProvider for our language
 class MyLanguageCompletionItemProvider {
     // This method is called when the user activates the suggestions (e.g., Ctrl+Space)
@@ -76,6 +126,9 @@ function activate(context) {
     // Completion provider
     const providerDisposable = vscode.languages.registerCompletionItemProvider({ language: 'duckyscript' }, new MyLanguageCompletionItemProvider());
     context.subscriptions.push(providerDisposable);
+    // Custom commands syntax highlighting
+    const customCommandProvider = new CustomCommandSemanticTokensProvider();
+    context.subscriptions.push(customCommandProvider, vscode.languages.registerDocumentSemanticTokensProvider({ language: 'duckyscript' }, customCommandProvider, semanticTokenLegend));
 }
 function deactivate() { }
 module.exports = {

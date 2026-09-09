@@ -54,19 +54,23 @@ const updatedCommandGroups = commandGroups.map(group =>
 
 const ALL_COMMANDS = commandGroups.flat();
 
-const semanticTokenLegend = new vscode.SemanticTokensLegend(
-    ['customCommand'],
-    []
-);
+const CUSTOM_COMMAND_TOKEN = 'duckyscriptCustomCommand';
 
-class CustomCommandSemanticTokensProvider implements vscode.DocumentSemanticTokensProvider {
-    private customCommands: Set<string> = new Set();
-    private _emitter = new vscode.EventEmitter<void>();
+const semanticTokenLegend = new vscode.SemanticTokensLegend([CUSTOM_COMMAND_TOKEN], []);
+
+function escapeRegExp(text: string): string {
+    return text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+class CustomCommandSemanticTokensProvider implements vscode.DocumentSemanticTokensProvider, vscode.Disposable {
+    private commandPattern: RegExp | undefined;
+    private readonly _emitter = new vscode.EventEmitter<void>();
+    private readonly _configListener: vscode.Disposable;
     onDidChangeSemanticTokens = this._emitter.event;
 
     constructor() {
         this.updateCustomCommands();
-        vscode.workspace.onDidChangeConfiguration(e => {
+        this._configListener = vscode.workspace.onDidChangeConfiguration(e => {
             if (e.affectsConfiguration('duckyscript.customCommands')) {
                 this.updateCustomCommands();
                 this._emitter.fire();
@@ -76,29 +80,42 @@ class CustomCommandSemanticTokensProvider implements vscode.DocumentSemanticToke
 
     private updateCustomCommands() {
         const config = vscode.workspace.getConfiguration('duckyscript');
-        const commands = config.get<string[]>('customCommands', []);
-        this.customCommands = new Set(commands.map(c => c.toUpperCase()));
+        const commands = config.get<string[]>('customCommands', [])
+            .filter(c => typeof c === 'string' && c.trim().length > 0)
+            .map(c => c.trim())
+            // Longest first, so PREFIX_LONG wins over PREFIX.
+            .sort((a, b) => b.length - a.length);
+
+        this.commandPattern = commands.length
+            ? new RegExp(`^\\s*(${commands.map(escapeRegExp).join('|')})(?![\\w-])`, 'i')
+            : undefined;
     }
 
     provideDocumentSemanticTokens(
         document: vscode.TextDocument,
-        _token: vscode.CancellationToken
+        token: vscode.CancellationToken
     ): vscode.ProviderResult<vscode.SemanticTokens> {
         const builder = new vscode.SemanticTokensBuilder(semanticTokenLegend);
+        if (!this.commandPattern) {
+            return builder.build();
+        }
+
         for (let i = 0; i < document.lineCount; i++) {
-            const line = document.lineAt(i);
-            const match = line.text.match(/^\s*([A-Z_][A-Z0-9_]*)\b/);
-            if (match && this.customCommands.has(match[1].toUpperCase())) {
-                builder.push({
-                    line: i,
-                    startColumn: match.index ?? 0,
-                    length: match[1].length,
-                    tokenType: 0,
-                    tokenModifiers: 0
-                });
+            if (token.isCancellationRequested) {
+                return builder.build();
+            }
+            const match = this.commandPattern.exec(document.lineAt(i).text);
+            if (match) {
+                const startColumn = match[0].length - match[1].length;
+                builder.push(i, startColumn, match[1].length, 0, 0);
             }
         }
         return builder.build();
+    }
+
+    dispose() {
+        this._configListener.dispose();
+        this._emitter.dispose();
     }
 }
 
@@ -148,11 +165,15 @@ export function activate(context: vscode.ExtensionContext) {
     context.subscriptions.push(providerDisposable);
 
     // Custom commands syntax highlighting
-    const customTokenProvider = vscode.languages.registerDocumentSemanticTokensProvider(
-        { language: 'duckyscript' },
-        new CustomCommandSemanticTokensProvider()
+    const customCommandProvider = new CustomCommandSemanticTokensProvider();
+    context.subscriptions.push(
+        customCommandProvider,
+        vscode.languages.registerDocumentSemanticTokensProvider(
+            { language: 'duckyscript' },
+            customCommandProvider,
+            semanticTokenLegend
+        )
     );
-    context.subscriptions.push(customTokenProvider);
 }
 
 function deactivate() { }
