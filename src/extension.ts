@@ -54,6 +54,71 @@ const updatedCommandGroups = commandGroups.map(group =>
 
 const ALL_COMMANDS = commandGroups.flat();
 
+const CUSTOM_COMMAND_TOKEN = 'duckyscriptCustomCommand';
+
+const semanticTokenLegend = new vscode.SemanticTokensLegend([CUSTOM_COMMAND_TOKEN], []);
+
+function escapeRegExp(text: string): string {
+    return text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+class CustomCommandSemanticTokensProvider implements vscode.DocumentSemanticTokensProvider, vscode.Disposable {
+    private commandPattern: RegExp | undefined;
+    private readonly _emitter = new vscode.EventEmitter<void>();
+    private readonly _configListener: vscode.Disposable;
+    onDidChangeSemanticTokens = this._emitter.event;
+
+    constructor() {
+        this.updateCustomCommands();
+        this._configListener = vscode.workspace.onDidChangeConfiguration(e => {
+            if (e.affectsConfiguration('duckyscript.customCommands')) {
+                this.updateCustomCommands();
+                this._emitter.fire();
+            }
+        });
+    }
+
+    private updateCustomCommands() {
+        const config = vscode.workspace.getConfiguration('duckyscript');
+        const commands = config.get<string[]>('customCommands', [])
+            .filter(c => typeof c === 'string' && c.trim().length > 0)
+            .map(c => c.trim())
+            // Longest first, so PREFIX_LONG wins over PREFIX.
+            .sort((a, b) => b.length - a.length);
+
+        this.commandPattern = commands.length
+            ? new RegExp(`^\\s*(${commands.map(escapeRegExp).join('|')})(?![\\w-])`, 'i')
+            : undefined;
+    }
+
+    provideDocumentSemanticTokens(
+        document: vscode.TextDocument,
+        token: vscode.CancellationToken
+    ): vscode.ProviderResult<vscode.SemanticTokens> {
+        const builder = new vscode.SemanticTokensBuilder(semanticTokenLegend);
+        if (!this.commandPattern) {
+            return builder.build();
+        }
+
+        for (let i = 0; i < document.lineCount; i++) {
+            if (token.isCancellationRequested) {
+                return builder.build();
+            }
+            const match = this.commandPattern.exec(document.lineAt(i).text);
+            if (match) {
+                const startColumn = match[0].length - match[1].length;
+                builder.push(i, startColumn, match[1].length, 0, 0);
+            }
+        }
+        return builder.build();
+    }
+
+    dispose() {
+        this._configListener.dispose();
+        this._emitter.dispose();
+    }
+}
+
 // We implement a CompletionItemProvider for our language
 class MyLanguageCompletionItemProvider implements vscode.CompletionItemProvider {
     // This method is called when the user activates the suggestions (e.g., Ctrl+Space)
@@ -98,6 +163,17 @@ export function activate(context: vscode.ExtensionContext) {
     );
 
     context.subscriptions.push(providerDisposable);
+
+    // Custom commands syntax highlighting
+    const customCommandProvider = new CustomCommandSemanticTokensProvider();
+    context.subscriptions.push(
+        customCommandProvider,
+        vscode.languages.registerDocumentSemanticTokensProvider(
+            { language: 'duckyscript' },
+            customCommandProvider,
+            semanticTokenLegend
+        )
+    );
 }
 
 function deactivate() { }

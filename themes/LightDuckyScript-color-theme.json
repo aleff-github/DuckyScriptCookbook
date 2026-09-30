@@ -1,7 +1,7 @@
 {
 	"name": "DuckyScript - Night Owl Light based",
 	"type": "light",
-	"semanticHighlighting": false,
+	"semanticHighlighting": true,
 	"colors": {
 		// Base
 		"foreground": "#403f53",

@@ -111,6 +111,38 @@
         "language": "duckyscript",
         "path": "./snippets/snippets.json"
       }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "DuckyScript",
+      "properties": {
+        "duckyscript.customCommands": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "scope": "resource",
+          "markdownDescription": "Extra DuckyScript commands to highlight, for firmware that extends the language (e.g. [USB Army Knife](https://github.com/i-am-shodan/USBArmyKnife/wiki/Commands), Flipper Zero). Matching is case-insensitive and applies to the first word of a line."
+        }
+      }
+    },
+    "semanticTokenTypes": [
+      {
+        "id": "duckyscriptCustomCommand",
+        "superType": "function",
+        "description": "A user-defined DuckyScript command from duckyscript.customCommands."
+      }
+    ],
+    "semanticTokenScopes": [
+      {
+        "language": "duckyscript",
+        "scopes": {
+          "duckyscriptCustomCommand": [
+            "support.function.builtin.duckyscript"
+          ]
+        }
+      }
     ]
   },
   "scripts": {
