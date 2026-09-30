@@ -1,5 +1,16 @@
 # Changelog
 
+## [Unreleased]
+
+### Added
+- Configurable syntax highlighting for firmware-specific DuckyScript commands through `duckyscript.customCommands` in VS Code/VSCodium settings.
+- Setup instructions and a `settings.json` example for custom command highlighting.
+
+### Fixed
+- Correctly register and map semantic tokens for custom commands across editor themes.
+- Enable semantic highlighting in the bundled light and dark themes.
+- Handle indented and prefix-sharing command names, configuration changes, and cancellation.
+
 All notable changes to this project will be documented in this file.
 
 ## [1.1.0] - 2026-04-02
