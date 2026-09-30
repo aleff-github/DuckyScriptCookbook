@@ -1,0 +1,177 @@
+name: Publish DuckyScript Cookbook
+
+# Deliberately manual: no pushes, tags or releases trigger publication.
+# Launch via Actions > Publish DuckyScript Cookbook > Run workflow.
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "New stable version (e.g. 1.2.0); use the same version to retry a partial publish"
+        required: true
+        type: string
+        default: "1.2.0"
+      skip_openvsx:
+        description: "Retry only: skip Open VSX if THIS version was already published there"
+        required: true
+        type: boolean
+        default: false
+      skip_marketplace:
+        description: "Retry only: skip VS Marketplace if THIS version was already published there"
+        required: true
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  id-token: write
+
+concurrency:
+  group: duckyscript-extension-release
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    name: Build and publish one VSIX to both registries
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out main, including tags
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Validate release request and prepare version
+        env:
+          RELEASE_VERSION: ${{ inputs.version }}
+          SKIP_OPENVSX: ${{ inputs.skip_openvsx }}
+          SKIP_MARKETPLACE: ${{ inputs.skip_marketplace }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "$GITHUB_REF" != 'refs/heads/main' ]]; then
+            echo 'Publishing is restricted to the main branch.' >&2
+            exit 1
+          fi
+          if [[ ! "$RELEASE_VERSION" =~ ^(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$ ]]; then
+            echo 'version must be stable semantic versioning, for example 1.2.0.' >&2
+            exit 1
+          fi
+          if [[ "$SKIP_OPENVSX" == true && "$SKIP_MARKETPLACE" == true ]]; then
+            echo 'Both registries cannot be skipped.' >&2
+            exit 1
+          fi
+          if git rev-parse -q --verify "refs/tags/v${RELEASE_VERSION}" >/dev/null; then
+            echo 'A GitHub release tag already exists for this version; refusing to republish.' >&2
+            exit 1
+          fi
+          node <<'NODE'
+          const fs = require('node:fs');
+          const pkg = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+          const desired = process.env.RELEASE_VERSION;
+          const [a, b, c] = pkg.version.split('.').map(Number);
+          const [x, y, z] = desired.split('.').map(Number);
+          if (![a, b, c].every(Number.isInteger)) throw Error('Current package version is not stable semver');
+          const order = x - a || y - b || z - c;
+          if (order < 0) throw Error('Requested version must not be lower than the current package version');
+          if (order > 0 && (process.env.SKIP_OPENVSX === 'true' || process.env.SKIP_MARKETPLACE === 'true')) {
+            throw Error('Skipping a registry is allowed only when retrying an already prepared version');
+          }
+          if (order > 0) {
+            const changelog = fs.readFileSync('CHANGELOG.md', 'utf8');
+            const heading = '## [Unreleased]';
+            if (!changelog.includes(heading)) throw Error('CHANGELOG.md is missing its Unreleased section');
+            fs.writeFileSync('CHANGELOG.md', changelog.replace(
+              heading,
+              '## [Unreleased]\n\n## [' + desired + '] - ' + new Date().toISOString().slice(0, 10)
+            ));
+            pkg.version = desired;
+            fs.writeFileSync('package.json', JSON.stringify(pkg, null, 2) + '\n');
+          }
+          console.log('Preparing ' + pkg.publisher + '.' + pkg.name + ' v' + desired);
+          NODE
+          echo "VSIX=duckyscriptcookbook-${RELEASE_VERSION}.vsix" >> "$GITHUB_ENV"
+
+      - name: Install and compile the extension
+        run: |
+          set -euo pipefail
+          # No package-lock.json currently exists in this repository.
+          npm install --no-audit --no-fund --package-lock=false
+          npm run compile
+
+      - name: Install pinned publisher tools
+        run: npm install --global --no-audit --no-fund @vscode/vsce@4.0.0 ovsx@1.2.0
+
+      - name: Package and inspect VSIX
+        env:
+          INPUT_VERSION: ${{ inputs.version }}
+        run: |
+          set -euo pipefail
+          vsce package --no-dependencies --out "$VSIX"
+          unzip -Z1 "$VSIX" > /tmp/ducky-vsix-files.txt
+          grep -Fxq 'extension/out/extension.js' /tmp/ducky-vsix-files.txt
+          grep -Fxq 'extension/package.json' /tmp/ducky-vsix-files.txt
+          grep -Fxq 'extension/README.md' /tmp/ducky-vsix-files.txt
+          unzip -p "$VSIX" extension/package.json | node -e '
+            let s="";process.stdin.on("data",x=>s+=x).on("end",()=>{
+              const pkg=JSON.parse(s);if(pkg.version!==process.env.INPUT_VERSION)process.exit(1);
+            });'
+
+      - name: Save package even if a registry later fails
+        uses: actions/upload-artifact@v4
+        with:
+          name: DuckyScriptCookbook-${{ inputs.version }}
+          path: ${{ env.VSIX }}
+          if-no-files-found: error
+
+      - name: Commit version and compiled output to main
+        env:
+          RELEASE_VERSION: ${{ inputs.version }}
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add package.json CHANGELOG.md out/
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(release): prepare v${RELEASE_VERSION}"
+            git push origin HEAD:main
+          fi
+
+      - name: Publish the VSIX to Open VSX
+        if: ${{ !inputs.skip_openvsx }}
+        env:
+          OVSX_PAT: ${{ secrets.OVSX_PAT }}
+        run: |
+          set -euo pipefail
+          if [[ -n "$OVSX_PAT" ]]; then
+            ovsx publish "$VSIX"
+          else
+            ovsx publish "$VSIX" --trusted-publishing
+          fi
+
+      - name: Publish the SAME VSIX to Visual Studio Marketplace
+        if: ${{ !inputs.skip_marketplace }}
+        env:
+          VSCE_PAT: ${{ secrets.VSCE_PAT }}
+        run: |
+          set -euo pipefail
+          if [[ -n "$VSCE_PAT" ]]; then
+            vsce publish --packagePath "$VSIX"
+          else
+            vsce publish --packagePath "$VSIX" --oidc
+          fi
+
+      - name: Create GitHub release with the published VSIX
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_VERSION: ${{ inputs.version }}
+        run: |
+          set -euo pipefail
+          gh release create "v${RELEASE_VERSION}" "$VSIX" \
+            --target "$(git rev-parse HEAD)" \
+            --title "v${RELEASE_VERSION}" \
+            --generate-notes
