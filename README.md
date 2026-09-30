@@ -19,6 +19,7 @@ With DuckyScript Cookbook you get:
 - optional bundled light and dark themes
 - support for standard editor themes too
 - early support for newer Pager-related commands
+- configurable highlighting for additional firmware-specific commands
 
 ## What it feels like to use
 
@@ -27,6 +28,25 @@ With DuckyScript Cookbook you get:
 The extension highlights DuckyScript nicely even with your usual VS Code or VSCodium theme.
 
 If you want the full cookbook vibe, you can also switch to the bundled **DuckyScript Light** or **DuckyScript Dark** themes.
+
+### Highlight commands from other DuckyScript implementations
+
+The extension includes syntax highlighting for known USB Army Knife commands. If your firmware adds more commands (for example, custom USB Army Knife or Flipper Zero extensions), you can highlight them without changing this extension.
+
+Open your **user** `settings.json` to use them everywhere, or the project's **.vscode/settings.json** to configure a specific workspace. Add the command names under `duckyscript.customCommands`:
+
+```json
+{
+  "duckyscript.customCommands": [
+    "MY_CUSTOM_COMMAND",
+    "ANOTHER_COMMAND"
+  ]
+}
+```
+
+Replace these examples with the actual command names supported by your device. Commands match **case-insensitively** at the **start of a line** (leading spaces are allowed). The longest configured name takes priority when names share a prefix. Changes to the setting refresh highlighting automatically.
+
+This setting adds **syntax highlighting only**; it does not add command execution, documentation or autocomplete for those commands. Semantic highlighting must be enabled in your active editor theme (it is enabled in both bundled DuckyScript themes).
 
 ### Help while you type
 
