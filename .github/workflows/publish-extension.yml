@@ -127,6 +127,7 @@ jobs:
           name: DuckyScriptCookbook-${{ inputs.version }}
           path: ${{ env.VSIX }}
           if-no-files-found: error
+          retention-days: 7
 
       - name: Commit version and compiled output to main
         env:
